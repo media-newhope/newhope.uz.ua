@@ -1,4 +1,6 @@
+'use client'
 import { Button } from '../Button/Button';
+import { LanguageSwitch } from '../LanguageSwitch/LanguageSwitch';
 import {Container} from "@/app/components/Container";
 import Link from "next/link";
 
@@ -27,11 +29,11 @@ export const Header = () => {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <select className="border rounded-md px-2 py-1">
-            <option value="en">EN</option>
-            <option value="es">ES</option>
-          </select>
-          <Button color="secondary" variant='nav'>ПРИЄДНУЙСЯ</Button>
+          <LanguageSwitch
+            currentLanguage="uk"
+            onLanguageChange={(lang) => console.log('Language changed to:', lang)}
+          />
+          <Button color="secondary" size='large'>ПРИЄДНУЙСЯ</Button>
         </div>
       </Container>
     </header>
