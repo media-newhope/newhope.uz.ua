@@ -23,20 +23,21 @@ export const Header = () => {
             <img width="43px" src="/logo.png" alt=""/>
             <span className="hidden md:inline-block">НОВА НАДІЯ</span>
           </Link>
+          <Burger onToggle={toggleMenu} isOpen={isMenuOpen} className="lg:hidden ml-3.5" />
         </div>
 
-        {/*<nav className="hidden lg:flex items-center text-base space-x-6 uppercase">*/}
-        {/*  {menuItems.map((item) => (*/}
-        {/*    <Link*/}
-        {/*      key={item}*/}
-        {/*      href={`/${item.toLowerCase()}`}*/}
-        {/*    >*/}
-        {/*      {item}*/}
-        {/*    </Link>*/}
-        {/*  ))}*/}
-        {/*</nav>*/}
+        <nav className="hidden lg:flex items-center text-base space-x-6 uppercase">
+          {menuItems.map((item) => (
+            <Link
+              key={item}
+              href={`/${item.toLowerCase()}`}
+            >
+              {item}
+            </Link>
+          ))}
+        </nav>
 
-        <Burger onToggle={toggleMenu} isOpen={isMenuOpen} className="" />
+
 
         <div className="flex items-center space-x-4">
           <LanguageSwitch
@@ -46,7 +47,7 @@ export const Header = () => {
           <Button color="secondary" size='large'>ПРИЄДНУЙСЯ</Button>
         </div>
       </Container>
-      <MobileNav isOpen={isMenuOpen} menuItems={menuItems} />
+      <MobileNav isOpen={isMenuOpen} menuItems={menuItems} className="lg:hidden" />
     </header>
   );
 };

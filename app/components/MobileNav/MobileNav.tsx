@@ -3,18 +3,18 @@
 import Link from 'next/link';
 import { twMerge } from 'tailwind-merge';
 
-interface MobileNavProps {
+interface MobileNavProps extends React.HTMLAttributes<HTMLElement> {
   isOpen: boolean;
   menuItems: string[];
 }
 
-export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, menuItems }) => {
+export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, menuItems, ...props }) => {
   return (
-    <nav
+      isOpen ? <nav
       className={twMerge(
-        'fixed top-[64px] left-0 w-full bg-black transform transition-transform duration-300 ease-in-out lg:hidden',
-        isOpen ? 'translate-y-0' : '-translate-y-full'
+        'fixed top-[64px] left-0 w-full bg-black transform transition-transform duration-300 ease-in-out',
       )}
+      {...props}
     >
       <div className="flex flex-col items-center py-4 space-y-4">
         {menuItems.map((item) => (
@@ -27,7 +27,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({ isOpen, menuItems }) => {
           </Link>
         ))}
       </div>
-    </nav>
+    </nav>: undefined
   );
 };
 
