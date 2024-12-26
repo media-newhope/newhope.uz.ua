@@ -8,7 +8,7 @@ export const Header = () => {
   const menuItems = ['Про нас', 'Наші служіння', 'Будівництво', 'Пожертвувати'];
 
   return (
-    <header className="py-3 bg-black [&_a]:text-white [&_a:hover]:text-gray-300">
+    <header className="py-3 bg-black [&_a]:text-white [&_a:hover]:text-gray-300 absolute left-0 right-0">
       <Container className="flex items-center justify-between">
         <div className="flex items-center text-white" >
           <Link href="/" className="text-2xl flex items-center gap-4">
