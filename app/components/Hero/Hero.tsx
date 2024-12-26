@@ -9,7 +9,7 @@ interface HeroProps {
 
 export function Hero({ title, description, address, imageUrl }: HeroProps) {
   return (
-    <div className="relative h-screen w-full">
+    <div className="relative z-10 h-screen w-full">
       {/* Background Image */}
       <div 
         className="absolute inset-0 z-0"
@@ -25,7 +25,7 @@ export function Hero({ title, description, address, imageUrl }: HeroProps) {
       <div className="absolute inset-0 bg-black/30 z-10" />
       
       {/* Content */}
-      <div className="relative z-20 h-full">
+      <div className="relative z-10 h-full">
         <div className="container mx-auto px-4 h-full flex flex-col justify-center pb-10">
             <div className="flex-1 flex items-center">
                 <div className="max-w-4xl">
