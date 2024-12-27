@@ -1,11 +1,10 @@
 "use client";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  color?: "primary" | "secondary" | "transparent";
+  color?: "primary" | "secondary" | "transparent" | "black";
   variant?: "solid";
   children: React.ReactNode;
   size?: "small" | "medium" | "large";
-  className: string;
 }
 
 export const Button = ({
@@ -19,6 +18,7 @@ export const Button = ({
   const baseStyles = "rounded-lg transition-colors font-size-16 text-white";
   const colorStyles = {
     primary: "bg-primary-500 hover:bg-primary-400",
+    black: "bg-black hover:bg-gray-800",
     secondary: "bg-secondary-500 hover:bg-secondary-400",
     transparent: "bg-transparent hover:text-gray-300",
   };
@@ -26,7 +26,7 @@ export const Button = ({
   const sizeStyles = {
     small: "text-sm px-2 py-1 rounded-md",
     medium: "text-base px-6 py-3 rounded-lg",
-    large: "text-lg px-8 py-4 rounded-xl",
+    large: "text-lg px-12 py-4 rounded-xl",
   };
 
   const variantStyles = {

@@ -25,8 +25,8 @@ export function JoinSection() {
   ];
 
   return (
-    <Section theme="dark" className="px-16 pb-28">
-      <Section.Title subtitle="приєднуйся" className="mb-24">
+    <Section theme="dark" className="p-3 md:px-16 md:pb-28">
+      <Section.Title subtitle="приєднуйся" className="mb-8 md:mb-24">
         Щонеділі надихаємося Божим словом, та прославляємо Бога разом
       </Section.Title>
 

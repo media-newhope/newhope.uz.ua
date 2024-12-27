@@ -6,11 +6,11 @@ type ServicesSectionProps = HTMLAttributes<HTMLElement>;
 
 export function ServicesSection({ ...props }: ServicesSectionProps) {
   return (
-    <Section {...props}>
+    <Section {...props} className="bg-gray-100">
       <Section.Title subtitle="наші служіння">
         кожен знайде щось для себе
       </Section.Title>
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-4">
         <ServiceItem
           title="Недільна школа для дітей"
           description="Недільна школа для дітей пропонує захоплюючі уроки, які допомагають зрозуміти біблійні історії через ігри та творчість."
