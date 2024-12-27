@@ -1,5 +1,3 @@
-import { text } from "node:stream/consumers";
-
 interface SectionProps {
   children: React.ReactNode;
 }
@@ -21,7 +19,7 @@ function SectionTitle({ children, subtitle }: SectionTitleProps) {
   return (
     <>
       <h3 className="text-md uppercase text-center mb-5">{subtitle}</h3>
-      <h2 className="text-5xl font-bold uppercase tracking-wide mb-6 text-center leading-tight">
+      <h2 className="text-5xl font-bold uppercase tracking-wide mb-8 text-center leading-tight">
         {children}
       </h2>
     </>

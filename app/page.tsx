@@ -1,6 +1,7 @@
 import { Header } from "@/app/components/Header/Header";
-import { HeroSection } from "@/app/Sections/Hero/Hero.section";
-import { AboutSection } from "@/app/Sections/About/About.section";
+import { HeroSection } from "@/app/sections/hero/Hero.section";
+import { AboutSection } from "@/app/sections/about/About.section";
+import { ServicesSection } from "@/app/sections/services/Services.section";
 
 export default function Home() {
   return (
@@ -12,7 +13,8 @@ export default function Home() {
         address="м. Ужгород, вул. Мирослава Скорика 18"
         imageUrl="/hero-background.jpg"
       />
-      <AboutSection></AboutSection>
+      <AboutSection />
+      <ServicesSection />
     </>
   );
 }
