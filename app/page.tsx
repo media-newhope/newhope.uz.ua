@@ -2,6 +2,7 @@ import { Header } from "@/app/components/Header/Header";
 import { HeroSection } from "@/app/sections/hero/Hero.section";
 import { AboutSection } from "@/app/sections/about/About.section";
 import { ServicesSection } from "@/app/sections/services/Services.section";
+import { JoinSection } from "@/app/sections/join/Join.section";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       />
       <AboutSection />
       <ServicesSection />
+      <JoinSection />
     </>
   );
 }
