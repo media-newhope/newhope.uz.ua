@@ -11,6 +11,20 @@ export function GivingSection() {
         для дітей, підлітків і бездомних. Приєднуйтесь до нас, щоб вливати на
         життя оточуючих.
       </p>
+      <div className="mb-16 max-w-md m-auto">
+        <h3 className="font-semibold text-gray-900 mb-2">
+          Банківський переказ
+        </h3>
+        <p className="text-gray-600 mb-2">
+          IBAN: UA343 0529 9000 0026 0090 2360 2393
+        </p>
+        <h3 className="font-semibold text-gray-900 mb-2">Призначення</h3>
+        <p className="text-gray-600 mb-2">Благодійні пожертви</p>
+        <h3 className="font-semibold text-gray-900 mb-2">Отримувач</h3>
+        <p className="text-gray-600 mb-2">
+          РО РГ Церкви Євангельскиз Християн-баптистів "Нова Надія"
+        </p>
+      </div>
       <div className="flex justify-center gap-3">
         <Button>ПОЖЕРТВУВАТИ</Button>
         <Button color="black">БУДІВНИЦТВО</Button>
