@@ -6,6 +6,7 @@ import { JoinSection } from "@/app/sections/join/Join.section";
 import { GivingSection } from "@/app/sections/giving/Giving.section";
 import { TeamSection } from "@/app/sections/team/Team.section";
 import { BuildingSection } from "@/app/sections/building/Building.section";
+import { GospelSection } from "@/app/sections/gospel/gospel.section";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       <GivingSection />
       <BuildingSection />
       <TeamSection />
+      <GospelSection />
     </>
   );
 }

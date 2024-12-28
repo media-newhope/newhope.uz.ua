@@ -23,7 +23,7 @@ export function Section({
 }
 
 interface SectionTitleProps extends HTMLAttributes<HTMLElement> {
-  children: React.ReactNode;
+  children?: React.ReactNode;
   subtitle?: string;
 }
 
