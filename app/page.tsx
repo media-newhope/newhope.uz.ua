@@ -4,6 +4,7 @@ import { AboutSection } from "@/app/sections/about/About.section";
 import { ServicesSection } from "@/app/sections/services/Services.section";
 import { JoinSection } from "@/app/sections/join/Join.section";
 import { GivingSection } from "@/app/sections/giving/Giving.section";
+import { TeamSection } from "@/app/sections/team/Team.section";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <ServicesSection />
       <JoinSection />
       <GivingSection />
+      <TeamSection />
     </>
   );
 }
