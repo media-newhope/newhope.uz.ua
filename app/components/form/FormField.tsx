@@ -1,6 +1,7 @@
 "use client";
 import { FC, InputHTMLAttributes, TextareaHTMLAttributes } from "react";
 import { ErrorMessage, Field } from "formik";
+import { FieldProps } from "formik/dist/Field";
 
 interface BaseFieldProps {
   label: string;
@@ -56,7 +57,7 @@ export const FormField: FC<FormFieldProps> = ({
   return (
     <div className={`relative ${className}`}>
       <Field name={name}>
-        {({ field, meta }: any) => (
+        {({ field, meta }: FieldProps) => (
           <>
             {multiline ? (
               <textarea

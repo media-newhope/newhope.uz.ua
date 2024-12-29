@@ -22,7 +22,7 @@ export function GivingSection() {
         <p className="text-gray-600 mb-2">Благодійні пожертви</p>
         <h3 className="font-semibold text-gray-900 mb-2">Отримувач</h3>
         <p className="text-gray-600 mb-2">
-          РО РГ Церкви Євангельскиз Християн-баптистів "Нова Надія"
+          РО РГ Церкви Євангельскиз Християн-баптистів &quot;Нова Надія&quot;
         </p>
       </div>
       <div className="flex justify-center gap-3">

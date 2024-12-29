@@ -1,5 +1,5 @@
 "use client";
-import { ErrorMessage, Field, Formik } from "formik";
+import { Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
 import { FormField } from "@/app/components/form/FormField";
@@ -32,7 +32,7 @@ const initialValues: FormValues = {
 export const FeedbackForm = () => {
   const handleSubmit = async (
     values: FormValues,
-    { setSubmitting, resetForm }: any,
+    { setSubmitting, resetForm }: FormikHelpers<FormValues>,
   ) => {
     try {
       await emailjs.send(
