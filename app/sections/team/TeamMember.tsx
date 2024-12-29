@@ -1,5 +1,4 @@
 import type { IconType } from "react-icons";
-import Image from "next/image";
 
 export const TeamMember = ({
   image,
@@ -15,14 +14,15 @@ export const TeamMember = ({
   return (
     <div className="flex flex-col items-center bg-stone-100 py-10 px-6">
       {/* Photo with circular border */}
-      <div className="relative w-48 h-48 mb-4 rounded-full border-4 border-white">
-        <Image
-          src={image}
-          fill
-          alt={name}
-          className="w-full h-full object-cover rounded-full"
-        />
-      </div>
+      <div
+        className="relative w-48 h-48 mb-4 rounded-full border-4 border-white"
+        style={{
+          backgroundImage: `url(${image})`,
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      ></div>
 
       {/* Name and Title */}
       <h3 className="text-2xl font-semibold text-gray-900 mb-1 uppercase text-center">

@@ -1,6 +1,5 @@
 import { Section } from "@/app/components/Section/Section";
 import { Button } from "@/app/components/Button/Button";
-import Image from "next/image";
 import { Title } from "@/app/components/Title";
 
 export function AboutSection() {
@@ -26,12 +25,10 @@ export function AboutSection() {
         </div>
 
         <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
-          <Image
+          <img
             src="/images/about.jpg"
             alt="Church Community"
-            fill
             className="object-cover"
-            priority
           />
         </div>
       </div>
