@@ -8,6 +8,7 @@ import { TeamSection } from "@/app/sections/team/Team.section";
 import { BuildingSection } from "@/app/sections/building/Building.section";
 import { GospelSection } from "@/app/sections/gospel/gospel.section";
 import { FeedbackSection } from "@/app/sections/feedback/Feedback.section";
+import { Footer } from "@/app/components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
       <TeamSection />
       <GospelSection />
       <FeedbackSection />
+      <Footer />
     </>
   );
 }

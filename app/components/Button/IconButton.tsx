@@ -8,6 +8,7 @@ interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label?: string;
   isRound?: boolean;
   isLoading?: boolean;
+  color?: "black" | "secondary";
 }
 
 export const IconButton: FC<IconButtonProps> = ({
@@ -17,6 +18,7 @@ export const IconButton: FC<IconButtonProps> = ({
   isRound = false,
   isLoading = false,
   className = "",
+  color = "black",
   disabled,
   ...props
 }) => {
@@ -24,13 +26,18 @@ export const IconButton: FC<IconButtonProps> = ({
     "inline-flex items-center justify-center transition-all duration-200 focus:outline-none";
 
   const variantStyles = {
-    ghost: "bg-transparent hover:text-primary-400 active:bg-gray-200",
+    ghost: "bg-transparent  active:bg-gray-200",
   };
 
   const sizeStyles = {
     sm: "p-1.5",
     md: "p-2",
     lg: "p-2.5",
+  };
+
+  const colorStyles = {
+    black: "text-black hover:text-primary-400",
+    secondary: "text-secondary-500 hover:text-secondary-400",
   };
 
   const disabledStyles =
@@ -45,6 +52,7 @@ export const IconButton: FC<IconButtonProps> = ({
     ${disabledStyles}
     ${roundedStyles}
     ${className}
+    ${colorStyles[color]}
   `;
 
   return (
