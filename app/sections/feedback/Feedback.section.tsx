@@ -2,14 +2,17 @@ import { Section } from "@/app/components/Section/Section";
 import { FaFacebook, FaInstagram, FaTelegram, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 import { IconButton } from "@/app/components/Button/IconButton";
+import { FeedbackForm } from "@/app/sections/feedback/FeedbackForm";
 
 export function FeedbackSection() {
   return (
-    <Section className="bg-secondary-100">
+    <Section className="bg-secondary-200">
       <Section.Title subtitle="зворотній звʼязок">напиши нам</Section.Title>
-      <div className="container flex">
-        <div className="flex-1"></div>
+      <div className="container flex gap-32">
         <div className="flex-1">
+          <FeedbackForm />
+        </div>
+        <div className="flex-1 max-w-lg">
           <h5 className="text-gray-600">Адреса</h5>
           <p className="uppercase text-xl font-bold mb-8">
             <Link
