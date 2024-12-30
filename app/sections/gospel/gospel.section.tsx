@@ -1,4 +1,4 @@
-import { Section } from "@/app/components/Section/Section";
+import { Section } from "@/app/components/section/Section";
 import { GospelWidget } from "@/app/sections/gospel/GospelWidget";
 
 export function GospelSection() {

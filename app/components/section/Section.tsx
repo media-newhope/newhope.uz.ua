@@ -2,7 +2,7 @@ import { HTMLAttributes } from "react";
 
 interface SectionProps extends HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
-  theme?: "light" | "dark";
+  theme?: "light" | "dark" | "custom";
 }
 
 export function Section({
@@ -11,10 +11,14 @@ export function Section({
   theme = "light",
   ...props
 }: SectionProps) {
-  const themeClass = theme === "light" ? "bg-white" : "bg-gray-900 text-white";
+  const themeClass = {
+    light: "bg-white text-black",
+    dark: "bg-black text-white",
+    custom: "",
+  };
 
   return (
-    <section {...props} className={`${className} ${themeClass}`}>
+    <section {...props} className={`${themeClass[theme]} ${className} `}>
       <div className={`container mx-auto px-4 py-10 max-w-7xl `}>
         {children}
       </div>

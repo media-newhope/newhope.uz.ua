@@ -1,0 +1,60 @@
+"use client";
+import { Button } from "../../components/button/Button";
+import { LanguageSwitch } from "@/app/components/languageSwitch/LanguageSwitch";
+import { Container } from "@/app/components/Container";
+import { Burger } from "../../components/burger/Burger";
+import { MobileNav } from "@/app/components/mobileNav/MobileNav";
+import Link from "next/link";
+import { useState } from "react";
+
+export const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuItems = ["Про нас", "Наші служіння", "Будівництво", "Пожертвувати"];
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <header className="py-3 bg-black [&_a]:text-white [&_a:hover]:text-gray-300 absolute z-20 left-0 right-0">
+      <Container className="flex items-center justify-between">
+        <div className="flex items-center text-white">
+          <Link href="/public" className="text-2xl flex items-center gap-4">
+            <img width="43px" src="/logo.png" alt="" />
+            <span className="hidden md:inline-block">НОВА НАДІЯ</span>
+          </Link>
+          <Burger
+            onToggle={toggleMenu}
+            isOpen={isMenuOpen}
+            className="lg:hidden ml-3.5"
+          />
+        </div>
+
+        <nav className="hidden lg:flex items-center text-base space-x-6 uppercase">
+          {menuItems.map((item) => (
+            <Link key={item} href={`/${item.toLowerCase()}`}>
+              {item}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="flex items-center space-x-4">
+          <LanguageSwitch
+            currentLanguage="uk"
+            onLanguageChange={(lang) =>
+              console.log("Language changed to:", lang)
+            }
+          />
+          <Button color="secondary" size="large">
+            ПРИЄДНУЙСЯ
+          </Button>
+        </div>
+      </Container>
+      <MobileNav
+        isOpen={isMenuOpen}
+        menuItems={menuItems}
+        className="lg:hidden"
+      />
+    </header>
+  );
+};

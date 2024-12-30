@@ -1,4 +1,4 @@
-import { Section } from "@/app/components/Section/Section";
+import { Section } from "@/app/components/section/Section";
 import { Button } from "@/app/components/Button/Button";
 
 export function GivingSection() {

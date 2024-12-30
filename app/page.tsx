@@ -1,4 +1,4 @@
-import { Header } from "@/app/components/Header/Header";
+import { Header } from "@/app/sections/header/Header";
 import { HeroSection } from "@/app/sections/hero/Hero.section";
 import { AboutSection } from "@/app/sections/about/About.section";
 import { ServicesSection } from "@/app/sections/services/Services.section";
@@ -8,7 +8,7 @@ import { TeamSection } from "@/app/sections/team/Team.section";
 import { BuildingSection } from "@/app/sections/building/Building.section";
 import { GospelSection } from "@/app/sections/gospel/gospel.section";
 import { FeedbackSection } from "@/app/sections/feedback/Feedback.section";
-import { Footer } from "@/app/components/Footer/Footer";
+import { Footer } from "@/app/sections/footer/Footer";
 
 export default function Home() {
   return (

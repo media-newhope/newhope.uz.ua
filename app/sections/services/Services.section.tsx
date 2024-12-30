@@ -1,4 +1,4 @@
-import { Section } from "@/app/components/Section/Section";
+import { Section } from "@/app/components/section/Section";
 import { HTMLAttributes } from "react";
 import { ServicesCarousel } from "@/app/sections/services/ServicesCarousel";
 
