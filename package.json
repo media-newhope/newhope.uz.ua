@@ -11,6 +11,8 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "clsx": "^2.1.1",
+    "embla-carousel": "^8.5.1",
+    "embla-carousel-react": "^8.5.1",
     "formik": "^2.4.6",
     "next": "15.1.2",
     "react": "^19.0.0",

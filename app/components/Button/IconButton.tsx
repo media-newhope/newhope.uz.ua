@@ -1,14 +1,15 @@
 // components/IconButton/IconButton.tsx
 import { ButtonHTMLAttributes, FC, ReactNode } from "react";
 
-interface IconButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface IconButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant?: "ghost";
   size?: "sm" | "md" | "lg";
   label?: string;
   isRound?: boolean;
   isLoading?: boolean;
-  color?: "black" | "secondary";
+  color?: "black" | "secondary" | "gray";
 }
 
 export const IconButton: FC<IconButtonProps> = ({
@@ -36,8 +37,9 @@ export const IconButton: FC<IconButtonProps> = ({
   };
 
   const colorStyles = {
-    black: "text-black hover:text-primary-400",
-    secondary: "text-secondary-500 hover:text-secondary-400",
+    gray: "text-gray-400 enabled:hover:text-primary-400",
+    black: "text-black enabled:hover:text-primary-400",
+    secondary: "text-secondary-500 enabled:hover:text-secondary-400",
   };
 
   const disabledStyles =
