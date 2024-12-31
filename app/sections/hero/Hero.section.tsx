@@ -1,4 +1,6 @@
 import { FaLocationDot } from "react-icons/fa6";
+import Link from "next/link";
+import { SITE_LINKS } from "@/app/sections/models";
 
 interface HeroProps {
   title: string;
@@ -15,7 +17,6 @@ export function HeroSection({
 }: HeroProps) {
   return (
     <div className="relative z-10 h-screen w-full">
-      {/* Background Image */}
       <div
         className="absolute inset-0 z-0"
         style={{
@@ -26,10 +27,8 @@ export function HeroSection({
         }}
       />
 
-      {/* Overlay to ensure text readability */}
       <div className="absolute inset-0 bg-black/30 z-10" />
 
-      {/* Content */}
       <div className="relative z-10 h-full">
         <div className="container mx-auto px-4 h-full flex flex-col justify-center pb-10">
           <div className="flex-1 flex items-center">
@@ -42,8 +41,14 @@ export function HeroSection({
           </div>
 
           <div className="text-white mb-4 text-xl text-right flex items-center justify-end gap-2">
-            <FaLocationDot size={40} />
-            {address}
+            <Link
+              className="flex items-center gap-2"
+              href={SITE_LINKS.GOOGLE_MAPS}
+              target="_blank"
+            >
+              <FaLocationDot size={40} />
+              {address}
+            </Link>
           </div>
         </div>
       </div>

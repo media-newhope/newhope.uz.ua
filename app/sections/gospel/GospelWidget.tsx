@@ -1,8 +1,8 @@
 "use client";
 import { HTMLAttributes, useState } from "react";
-import { Button } from "@/app/components/Button/Button";
 import { gospelItems } from "@/app/sections/gospel/gospel-content";
 import { GospelIcon, Icon } from "@/app/components/Icon";
+import { Button } from "@/app/components/button/Button";
 
 interface MainTileContent {
   desc: React.ReactNode;

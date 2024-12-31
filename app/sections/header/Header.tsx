@@ -6,14 +6,15 @@ import { Burger } from "../../components/burger/Burger";
 import { MobileNav } from "@/app/components/mobileNav/MobileNav";
 import Link from "next/link";
 import { useState } from "react";
+import { SITE_LINKS } from "@/app/sections/models";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuItems = [
-    { name: "Про нас", link: "#about" },
-    { name: "Наші служіння", link: "#services" },
-    { name: "Будівництво", link: "#building" },
-    { name: "Пожертвувати", link: "#giving" },
+    { name: "Про нас", link: SITE_LINKS.ABOUT },
+    { name: "Наші служіння", link: SITE_LINKS.SERVICES },
+    { name: "Будівництво", link: SITE_LINKS.BUILDING },
+    { name: "Пожертвувати", link: SITE_LINKS.GIVING },
   ];
 
   const toggleMenu = () => {

@@ -9,7 +9,7 @@ export interface IconButtonProps
   label?: string;
   isRound?: boolean;
   isLoading?: boolean;
-  color?: "black" | "secondary" | "gray";
+  color?: "black" | "secondary" | "gray" | "primary";
 }
 
 export const IconButton: FC<IconButtonProps> = ({
@@ -40,6 +40,7 @@ export const IconButton: FC<IconButtonProps> = ({
     gray: "text-gray-400 enabled:hover:text-primary-400",
     black: "text-black enabled:hover:text-primary-400",
     secondary: "text-secondary-500 enabled:hover:text-secondary-400",
+    primary: "text-primary-500 enabled:hover:text-primary-400",
   };
 
   const disabledStyles =

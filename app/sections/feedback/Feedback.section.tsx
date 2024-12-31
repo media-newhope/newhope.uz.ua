@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaTelegram, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 import { FeedbackForm } from "@/app/sections/feedback/FeedbackForm";
 import { IconButton } from "@/app/components/button/IconButton";
-import { PageSectionProps } from "@/app/sections/models";
+import { PageSectionProps, SITE_LINKS } from "@/app/sections/models";
 
 export function FeedbackSection(props: PageSectionProps) {
   return (
@@ -17,10 +17,7 @@ export function FeedbackSection(props: PageSectionProps) {
         <div className="basis-1/2">
           <h5 className="text-gray-600">Адреса</h5>
           <p className="uppercase text-xl font-bold mb-8">
-            <Link
-              href="https://maps.app.goo.gl/hw979PjViKu7Ygd59"
-              target="_blank"
-            >
+            <Link href={SITE_LINKS.GOOGLE_MAPS} target="_blank">
               вул. Мирослава скорика (сурікова) 8
             </Link>
           </p>

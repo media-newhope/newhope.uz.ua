@@ -1,6 +1,7 @@
 import { Section } from "@/app/components/section/Section";
-import { PageSectionProps } from "@/app/sections/models";
+import { PageSectionProps, SITE_LINKS } from "@/app/sections/models";
 import { Button } from "@/app/components/button/Button";
+import Link from "next/link";
 
 export function GivingSection(props: PageSectionProps) {
   return (
@@ -27,8 +28,12 @@ export function GivingSection(props: PageSectionProps) {
         </p>
       </div>
       <div className="flex justify-center gap-3">
-        <Button>ПОЖЕРТВУВАТИ</Button>
-        <Button color="black">БУДІВНИЦТВО</Button>
+        <Link href={SITE_LINKS.GIVING}>
+          <Button>ПОЖЕРТВУВАТИ</Button>
+        </Link>
+        <Link href={SITE_LINKS.BUILDING}>
+          <Button color="black">БУДІВНИЦТВО</Button>
+        </Link>
       </div>
     </Section>
   );

@@ -1,15 +1,15 @@
 import Link from "next/link";
 import { IconButton } from "@/app/components/button/IconButton";
 import { FaFacebook, FaInstagram, FaTelegram, FaYoutube } from "react-icons/fa";
+import { SITE_LINKS } from "@/app/sections/models";
 
 export const Footer = () => {
   const menuItems = [
-    { name: "про нас", link: "" },
-    { name: "наші служіння", link: "" },
-    { name: "Пожертви", link: "" },
-    { name: "Будівництво", link: "" },
-    { name: "приєднуйся", link: "" },
-    { name: "Наші служіння", link: "" },
+    { name: "про нас", link: SITE_LINKS.ABOUT },
+    { name: "наші служіння", link: SITE_LINKS.SERVICES },
+    { name: "Пожертви", link: SITE_LINKS.GIVING },
+    { name: "Будівництво", link: SITE_LINKS.BUILDING },
+    { name: "приєднуйся", link: SITE_LINKS.JOIN },
   ];
 
   return (
@@ -35,7 +35,10 @@ export const Footer = () => {
             <ul className="space-y-2 uppercase">
               {menuItems.map((item) => (
                 <li key={item.name}>
-                  <a href="#" className="text-gray-400 hover:text-white">
+                  <a
+                    href={item.link}
+                    className="text-gray-400 hover:text-white"
+                  >
                     {item.name}
                   </a>
                 </li>
@@ -46,25 +49,22 @@ export const Footer = () => {
           <div>
             <h3 className="mb-4 text-lg">Знайди нас</h3>
             <div className="flex space-x-4">
-              <Link
-                target="_blank"
-                href="https://www.facebook.com/newhopeuzhgorod"
-              >
+              <Link target="_blank" href={SITE_LINKS.FACEBOOK}>
                 <IconButton color="secondary">
                   <FaFacebook size={28} />
                 </IconButton>
               </Link>
-              <Link target="_blank" href="https://www.instagram.com/newhopeuzh">
+              <Link target="_blank" href={SITE_LINKS.INSTAGRAM}>
                 <IconButton color="secondary">
                   <FaInstagram size={28} />
                 </IconButton>
               </Link>
-              <Link target="_blank" href="https://www.youtube.com/@NewHopeUzh">
+              <Link target="_blank" href={SITE_LINKS.YOUTUBE}>
                 <IconButton color="secondary">
                   <FaYoutube size={28} />
                 </IconButton>
               </Link>
-              <Link target="_blank" href="https://t.me/NewHopeUzh">
+              <Link target="_blank" href={SITE_LINKS.TELEGRAM}>
                 <IconButton color="secondary">
                   <FaTelegram size={28} />
                 </IconButton>
