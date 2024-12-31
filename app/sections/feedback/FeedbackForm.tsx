@@ -3,7 +3,7 @@ import { Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
 import { FormField } from "@/app/components/form/FormField";
-import { Button } from "@/app/components/Button/Button";
+import { Button } from "@/app/components/button/Button";
 
 interface FormValues {
   name: string;

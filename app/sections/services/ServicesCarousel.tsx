@@ -25,8 +25,6 @@ export function ServicesCarousel() {
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
-  console.log(scrollSnaps, "scrollSnaps");
-
   const slides = [
     <ServiceItem
       key={0}

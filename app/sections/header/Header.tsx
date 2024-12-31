@@ -5,11 +5,28 @@ import { Container } from "@/app/components/Container";
 import { Burger } from "../../components/burger/Burger";
 import { MobileNav } from "@/app/components/mobileNav/MobileNav";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { SITE_LINKS } from "@/app/sections/models";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup listener
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const menuItems = [
     { name: "Про нас", link: SITE_LINKS.ABOUT },
     { name: "Наші служіння", link: SITE_LINKS.SERVICES },
@@ -22,7 +39,11 @@ export const Header = () => {
   };
 
   return (
-    <header className="py-3 bg-black [&_a]:text-white [&_a:hover]:text-gray-300 absolute z-20 left-0 right-0">
+    <header
+      className={`py-3  [&_a]:text-white [&_a:hover]:text-gray-300 z-20 left-0 right-0 fixed transition-colors duration-500 ${
+        isScrolled ? "bg-black/60 backdrop-blur-sm" : "bg-black"
+      }`}
+    >
       <Container className="flex items-center justify-between">
         <div className="flex items-center text-white">
           <Link href="/public" className="text-2xl flex items-center gap-4">
