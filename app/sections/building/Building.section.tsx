@@ -1,9 +1,13 @@
 import { Section } from "@/app/components/section/Section";
-import { Button } from "@/app/components/Button/Button";
+import { PageSectionProps } from "@/app/sections/models";
+import { Button } from "@/app/components/button/Button";
 
-export function BuildingSection() {
+export function BuildingSection(props: PageSectionProps) {
   return (
-    <Section className="relative min-h-[600px] flex items-center justify-center">
+    <Section
+      className="relative min-h-[600px] flex items-center justify-center"
+      {...props}
+    >
       {/* Background Image */}
       <div
         className="absolute inset-0 z-0"

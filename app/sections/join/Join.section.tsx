@@ -1,8 +1,9 @@
 import { Section } from "@/app/components/section/Section";
 import { JoinItem } from "@/app/sections/join/JoinItem";
 import { PiChurchLight, PiInstagramLogo, PiYoutubeLogo } from "react-icons/pi";
+import { PageSectionProps } from "@/app/sections/models";
 
-export function JoinSection() {
+export function JoinSection(props: PageSectionProps) {
   const joinItems = [
     {
       icon: PiChurchLight,
@@ -25,7 +26,7 @@ export function JoinSection() {
   ];
 
   return (
-    <Section theme="dark" className="p-3 md:px-16 md:pb-28">
+    <Section theme="dark" className="p-3 md:px-16 md:pb-28" {...props}>
       <Section.Title subtitle="приєднуйся" className="mb-8 md:mb-24">
         Щонеділі надихаємося Божим словом, та прославляємо Бога разом
       </Section.Title>

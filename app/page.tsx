@@ -20,14 +20,14 @@ export default function Home() {
         address="м. Ужгород, вул. Мирослава Скорика 18"
         imageUrl="/hero-background.jpg"
       />
-      <AboutSection />
-      <ServicesSection />
-      <JoinSection />
-      <GivingSection />
-      <BuildingSection />
-      <TeamSection />
-      <GospelSection />
-      <FeedbackSection />
+      <AboutSection id="about" />
+      <ServicesSection id="services" />
+      <JoinSection id="join" />
+      <GivingSection id="giving" />
+      <BuildingSection id="building" />
+      <TeamSection id="team" />
+      <GospelSection id="gospel" />
+      <FeedbackSection id="feedback" />
       <Footer />
     </>
   );

@@ -3,10 +3,11 @@ import { FaFacebook, FaInstagram, FaTelegram, FaYoutube } from "react-icons/fa";
 import Link from "next/link";
 import { FeedbackForm } from "@/app/sections/feedback/FeedbackForm";
 import { IconButton } from "@/app/components/button/IconButton";
+import { PageSectionProps } from "@/app/sections/models";
 
-export function FeedbackSection() {
+export function FeedbackSection(props: PageSectionProps) {
   return (
-    <Section theme="custom" className="bg-secondary-200">
+    <Section theme="custom" className="bg-secondary-200" {...props}>
       <Section.Title subtitle="зворотній звʼязок">напиши нам</Section.Title>
       <div className="container md:flex gap-32">
         <div className="basis-1/2">

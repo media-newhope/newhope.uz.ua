@@ -1,8 +1,9 @@
 import { Section } from "@/app/components/section/Section";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { TeamMember } from "@/app/sections/team/TeamMember";
+import {PageSectionProps} from "@/app/sections/models";
 
-export function TeamSection() {
+export function TeamSection(props: PageSectionProps) {
   const teamMembers = [
     {
       image: "/images/sl.jpg",
@@ -34,7 +35,7 @@ export function TeamSection() {
   ];
 
   return (
-    <Section>
+    <Section {...props}>
       <Section.Title subtitle="команда">Команда служителів</Section.Title>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">

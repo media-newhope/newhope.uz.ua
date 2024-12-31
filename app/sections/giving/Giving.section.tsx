@@ -1,9 +1,10 @@
 import { Section } from "@/app/components/section/Section";
-import { Button } from "@/app/components/Button/Button";
+import { PageSectionProps } from "@/app/sections/models";
+import { Button } from "@/app/components/button/Button";
 
-export function GivingSection() {
+export function GivingSection(props: PageSectionProps) {
   return (
-    <Section>
+    <Section {...props}>
       <Section.Title subtitle="Пожертви">Давайте з радістю</Section.Title>
       <p className="text-center max-w-3xl m-auto mb-8">
         Ваші пожертви дозволяють нам здійснювати життєво важливі ініціативи,

@@ -1,9 +1,10 @@
 import { Section } from "@/app/components/section/Section";
 import { GospelWidget } from "@/app/sections/gospel/GospelWidget";
+import { PageSectionProps } from "@/app/sections/models";
 
-export function GospelSection() {
+export function GospelSection(props: PageSectionProps) {
   return (
-    <Section className="relative">
+    <Section className="relative" {...props}>
       <div
         className="absolute inset-0 z-0"
         style={{

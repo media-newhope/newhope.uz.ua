@@ -1,10 +1,11 @@
 import { Section } from "@/app/components/section/Section";
-import { Button } from "@/app/components/Button/Button";
 import { Title } from "@/app/components/Title";
+import { PageSectionProps } from "@/app/sections/models";
+import { Button } from "@/app/components/button/Button";
 
-export function AboutSection() {
+export function AboutSection(props: PageSectionProps) {
   return (
-    <Section>
+    <Section {...props}>
       <Section.Title subtitle="Наша місія">
         Вірити <br />
         любити <br />

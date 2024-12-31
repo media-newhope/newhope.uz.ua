@@ -9,7 +9,12 @@ import { useState } from "react";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuItems = ["Про нас", "Наші служіння", "Будівництво", "Пожертвувати"];
+  const menuItems = [
+    { name: "Про нас", link: "#about" },
+    { name: "Наші служіння", link: "#services" },
+    { name: "Будівництво", link: "#building" },
+    { name: "Пожертвувати", link: "#giving" },
+  ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -32,8 +37,8 @@ export const Header = () => {
 
         <nav className="hidden lg:flex items-center text-base space-x-6 uppercase">
           {menuItems.map((item) => (
-            <Link key={item} href={`/${item.toLowerCase()}`}>
-              {item}
+            <Link key={item.link} href={item.link}>
+              {item.name}
             </Link>
           ))}
         </nav>
