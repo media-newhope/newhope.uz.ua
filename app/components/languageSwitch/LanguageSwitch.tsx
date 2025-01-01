@@ -1,16 +1,32 @@
 "use client";
 
 import { Button } from "../button/Button";
+import { usePathname, useRouter } from "next/navigation";
 
 interface LanguageSwitchProps {
   currentLanguage: "en" | "uk";
-  onLanguageChange: (language: "en" | "uk") => void;
 }
 
 export const LanguageSwitch = ({
   currentLanguage = "uk",
-  onLanguageChange,
 }: LanguageSwitchProps) => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const onLanguageChange = (lang: "en" | "uk") => {
+    const currentPath = pathname;
+
+    if (lang === "en" && currentLanguage !== "en") {
+      // Add "en" to the beginning of the path
+      const newPath = currentPath === "/" ? "/en" : `/en${currentPath}`;
+      router.push(newPath);
+    } else if (currentLanguage !== "uk") {
+      // Remove "en" from the path
+      const newPath = currentPath.replace(/^\/en/, "");
+      router.push(newPath || "/");
+    }
+  };
+
   return (
     <div className="flex space-x-2">
       <Button
@@ -18,14 +34,14 @@ export const LanguageSwitch = ({
         color={currentLanguage === "en" ? "secondary" : "transparent"}
         onClick={() => onLanguageChange("en")}
       >
-        EN
+        Eng
       </Button>
       <Button
         size="small"
         color={currentLanguage === "uk" ? "secondary" : "transparent"}
         onClick={() => onLanguageChange("uk")}
       >
-        UK
+        Укр
       </Button>
     </div>
   );

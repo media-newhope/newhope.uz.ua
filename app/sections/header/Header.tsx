@@ -68,12 +68,7 @@ export const Header = ({ lang }: PageSectionProps) => {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <LanguageSwitch
-            currentLanguage="uk"
-            onLanguageChange={(lang) =>
-              console.log("Language changed to:", lang)
-            }
-          />
+          <LanguageSwitch currentLanguage={lang} />
           <Button color="secondary" size="large">
             {t("NAV.JOIN_US")}
           </Button>
