@@ -5,35 +5,35 @@ import { PageSectionProps, SITE_LINKS } from "@/app/sections/models";
 import Link from "next/link";
 import { IconButton } from "@/app/components/button/IconButton";
 import { FaFacebook, FaInstagram, FaTelegram, FaYoutube } from "react-icons/fa";
+import { getTranslation } from "@/app/lib/utils";
 
 export function JoinSection(props: PageSectionProps) {
+  const t = getTranslation(props.lang);
+
   const joinItems = [
     {
       icon: PiChurchLight,
-      title: "Відвідайте нас вживу",
+      title: t("JOIN.VISIT.TITLE"),
       link: SITE_LINKS.GOOGLE_MAPS,
       description: (
         <>
-          <p>Завжди раді вас бачити на наших зібраннях.</p>
-          <p>Щонеділі об 11:00. вул. Мирослава Скорика 18</p>
+          <p>{t("JOIN.VISIT.DESCRIPTION1")}</p>
+          <p>{t("JOIN.VISIT.DESCRIPTION2")}</p>
         </>
       ),
     },
     {
       icon: PiYoutubeLogo,
-      title: "Пряма трансляція",
+      title: t("JOIN.LIVESTREAM.TITLE"),
       link: SITE_LINKS.YOUTUBE,
-      description: "Прийміть участь у недільному зібранні де б ви не були",
+      description: t("JOIN.LIVESTREAM.DESCRIPTION"),
     },
     {
       icon: PiInstagramLogo,
-      title: "соціальні мережі",
+      title: t("JOIN.SOCIAL.TITLE"),
       description: (
         <>
-          <p className="mb-4">
-            Приєднуйтесь до нашої дружньої спільноти, де кожен знайде підтримку
-            та прийняття
-          </p>
+          <p className="mb-4">{t("JOIN.SOCIAL.DESCRIPTION")}</p>
           <div className="flex justify-center">
             <Link target="_blank" href={SITE_LINKS.INSTAGRAM}>
               <IconButton color="primary">
@@ -63,8 +63,8 @@ export function JoinSection(props: PageSectionProps) {
 
   return (
     <Section theme="dark" className="p-3 md:px-16 md:pb-28" {...props}>
-      <Section.Title subtitle="приєднуйся" className="mb-8 md:mb-24">
-        Щонеділі надихаємося Божим словом, та прославляємо Бога разом
+      <Section.Title subtitle={t("JOIN.TITLE")} className="mb-8 md:mb-24">
+        {t("JOIN.SUBTITLE")}
       </Section.Title>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">

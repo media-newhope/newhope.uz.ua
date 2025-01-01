@@ -87,7 +87,7 @@ export const FormField: FC<FormFieldProps> = ({
             <ErrorMessage
               name={name}
               component="div"
-              className="absolute -bottom-5 left-0 text-sm text-red-500"
+              className="absolute -bottom-5 left-0 text-sm text-red-400"
             />
           </>
         )}

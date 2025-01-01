@@ -4,6 +4,8 @@ import * as Yup from "yup";
 import emailjs from "@emailjs/browser";
 import { FormField } from "@/app/components/form/FormField";
 import { Button } from "@/app/components/button/Button";
+import { getTranslation } from "@/app/lib/utils";
+import { LangProps, LANGUAGE } from "@/app/locales/models";
 
 interface FormValues {
   name: string;
@@ -11,17 +13,19 @@ interface FormValues {
   message: string;
 }
 
-const validationSchema = Yup.object({
-  name: Yup.string()
-    .min(2, "Name must be at least 2 characters")
-    .required("Name is required"),
-  email: Yup.string()
-    .email("Invalid email address")
-    .required("Email is required"),
-  message: Yup.string()
-    .min(10, "Message must be at least 10 characters")
-    .required("Message is required"),
-});
+function getValidationSchema(t: (token: LangProps) => string) {
+  return Yup.object({
+    name: Yup.string()
+      .min(2, t("FEEDBACK.ERROR.NAME_MIN"))
+      .required(t("FEEDBACK.ERROR.NAME_REQUIRED")),
+    email: Yup.string()
+      .email(t("FEEDBACK.ERROR.EMAIL"))
+      .required(t("FEEDBACK.ERROR.EMAIL_REQUIRED")),
+    message: Yup.string()
+      .min(10, t("FEEDBACK.ERROR.MESSAGE_MIN"))
+      .required(t("FEEDBACK.ERROR.MESSAGE_REQUIRED")),
+  });
+}
 
 const initialValues: FormValues = {
   name: "",
@@ -29,7 +33,9 @@ const initialValues: FormValues = {
   message: "",
 };
 
-export const FeedbackForm = () => {
+export const FeedbackForm = ({ lang }: { lang: LANGUAGE }) => {
+  const t = getTranslation(lang);
+
   const handleSubmit = async (
     values: FormValues,
     { setSubmitting, resetForm }: FormikHelpers<FormValues>,
@@ -47,12 +53,10 @@ export const FeedbackForm = () => {
       );
 
       resetForm();
-      alert("Thank you for your message. We will get back to you soon!");
+      alert(t("FEEDBACK.SUCCESS"));
     } catch (error) {
       console.error("Error sending email:", error);
-      alert(
-        "Sorry, there was an error sending your message. Please try again.",
-      );
+      alert(t("FEEDBACK.ERROR.REQUEST"));
     } finally {
       setSubmitting(false);
     }
@@ -61,22 +65,32 @@ export const FeedbackForm = () => {
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={validationSchema}
+      validationSchema={getValidationSchema(t)}
       onSubmit={handleSubmit}
     >
       {({ isSubmitting, handleSubmit }) => (
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
-            <FormField label="Name" type="text" name="name" id="name" />
-          </div>
-
-          <div>
-            <FormField label="Email" type="email" name="email" id="email" />
+            <FormField
+              label={t("FEEDBACK.NAME")}
+              type="text"
+              name="name"
+              id="name"
+            />
           </div>
 
           <div>
             <FormField
-              label="Message"
+              label={t("FEEDBACK.EMAIL")}
+              type="email"
+              name="email"
+              id="email"
+            />
+          </div>
+
+          <div>
+            <FormField
+              label={t("FEEDBACK.MESSAGE")}
               multiline={true}
               name="message"
               id="message"
@@ -108,7 +122,7 @@ export const FeedbackForm = () => {
                   />
                 </svg>
               ) : (
-                "Відправити"
+                t("FEEDBACK.SEND")
               )}
             </Button>
           </div>

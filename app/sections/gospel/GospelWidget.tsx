@@ -1,8 +1,10 @@
 "use client";
 import { HTMLAttributes, useState } from "react";
-import { gospelItems } from "@/app/sections/gospel/gospel-content";
+import { getGospelItems } from "@/app/sections/gospel/gospel-content";
 import { GospelIcon, Icon } from "@/app/components/Icon";
 import { Button } from "@/app/components/button/Button";
+import { LANGUAGE } from "@/app/locales/models";
+import { getTranslation } from "@/app/lib/utils";
 
 interface MainTileContent {
   desc: React.ReactNode;
@@ -12,9 +14,15 @@ interface MainTileContent {
 
 interface GospelMainTileProps extends HTMLAttributes<HTMLElement> {
   tileContent?: MainTileContent | undefined;
+  lang: LANGUAGE;
 }
 
-const GospelMainTile = ({ className, tileContent }: GospelMainTileProps) => {
+const GospelMainTile = ({
+  className,
+  tileContent,
+  lang,
+}: GospelMainTileProps) => {
+  const t = getTranslation(lang);
   return (
     <div
       className={`${className} 
@@ -30,7 +38,7 @@ const GospelMainTile = ({ className, tileContent }: GospelMainTileProps) => {
       )}
       {!tileContent && (
         <h3 className="text-center font-semibold text-5xl uppercase">
-          Чотири Речі які важливо знати
+          {t("GOSPEL.TITLE")}
         </h3>
       )}
       {tileContent && (
@@ -98,12 +106,15 @@ const GospelTile = ({
   );
 };
 
-export function GospelWidget() {
+export function GospelWidget({ lang }: { lang: LANGUAGE }) {
   const [selectedIndex, setSelectedIndex] = useState<number>();
+
+  const gospelItems = getGospelItems(lang);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3  max-w-5xl mx-auto">
       <GospelMainTile
+        lang={lang}
         tileContent={
           !!selectedIndex ? gospelItems[selectedIndex].details : undefined
         }

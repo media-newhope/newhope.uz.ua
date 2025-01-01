@@ -1,15 +1,18 @@
 import Link from "next/link";
 import { IconButton } from "@/app/components/button/IconButton";
 import { FaFacebook, FaInstagram, FaTelegram, FaYoutube } from "react-icons/fa";
-import { SITE_LINKS } from "@/app/sections/models";
+import { PageSectionProps, SITE_LINKS } from "@/app/sections/models";
+import { getTranslation } from "@/app/lib/utils";
 
-export const Footer = () => {
+export const Footer = ({ lang }: PageSectionProps) => {
+  const t = getTranslation(lang);
+
   const menuItems = [
-    { name: "про нас", link: SITE_LINKS.ABOUT },
-    { name: "наші служіння", link: SITE_LINKS.SERVICES },
-    { name: "Пожертви", link: SITE_LINKS.GIVING },
-    { name: "Будівництво", link: SITE_LINKS.BUILDING },
-    { name: "приєднуйся", link: SITE_LINKS.JOIN },
+    { name: t("FOOTER.MENU.ABOUT"), link: SITE_LINKS.ABOUT },
+    { name: t("FOOTER.MENU.SERVICES"), link: SITE_LINKS.SERVICES },
+    { name: t("FOOTER.MENU.GIVING"), link: SITE_LINKS.GIVING },
+    { name: t("FOOTER.MENU.BUILDING"), link: SITE_LINKS.BUILDING },
+    { name: t("FOOTER.MENU.JOIN"), link: SITE_LINKS.JOIN },
   ];
 
   return (
@@ -19,19 +22,19 @@ export const Footer = () => {
           <div>
             <Link
               href="/public"
-              className="text-2xl flex items-center gap-4 mb-5 md:mb-24"
+              className="text-2xl flex items-center gap-4 mb-5 md:mb-16"
             >
               <img width="43px" src="/logo.png" alt="" />
-              <span>НОВА НАДІЯ</span>
+              <span>{t("LOGO.TEXT")}</span>
             </Link>
             <div className="uppercase">
               <p className="mb-2">info@newhope.uz.ua</p>
-              <p>вул. мирослава скорика 8</p>
+              <p>{t("FOOTER.CONTACT.ADDRESS")}</p>
             </div>
           </div>
 
           <div>
-            <h3 className="mb-4 text-lg">Посилання</h3>
+            <h3 className="mb-4 text-lg">{t("FOOTER.LINKS")}</h3>
             <ul className="space-y-2 uppercase">
               {menuItems.map((item) => (
                 <li key={item.name}>
@@ -47,7 +50,7 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h3 className="mb-4 text-lg">Знайди нас</h3>
+            <h3 className="mb-4 text-lg">{t("FOOTER.FIND_US")}</h3>
             <div className="flex space-x-4">
               <Link target="_blank" href={SITE_LINKS.FACEBOOK}>
                 <IconButton color="secondary">
@@ -73,7 +76,7 @@ export const Footer = () => {
           </div>
 
           <div className="min-w-[300px]">
-            <h3 className="mb-4 text-lg">Наші партнери</h3>
+            <h3 className="mb-4 text-lg">{t("FOOTER.OUR_PARTNERS")}</h3>
             <div className="space-y-4"></div>
             <ul>
               <li className="flex gap-3 mb-2 align-middle">
@@ -88,8 +91,10 @@ export const Footer = () => {
                 </div>
 
                 <div className="flex-1">
-                  <h4 className="uppercase text-lg mb-1">ВСЦ ЄХБ</h4>
-                  Всеукраїнський Союз Церков Євангельських Християн-баптистів
+                  <h4 className="uppercase text-lg mb-1">
+                    {t("FOOTER.PARTNERS_LIST.ECB.TITLE")}
+                  </h4>
+                  {t("FOOTER.PARTNERS_LIST.ECB.FULL_NAME")}
                 </div>
               </li>
               <li className="flex mb-2 gap-3 align-middle">
@@ -107,8 +112,10 @@ export const Footer = () => {
                   </Link>
                 </div>
                 <div className="flex-1">
-                  <h4 className="uppercase text-lg mb-1">УБТС</h4>
-                  Українська Баптистська Теологічна Семінарія
+                  <h4 className="uppercase text-lg mb-1">
+                    {t("FOOTER.PARTNERS_LIST.UBTS.TITLE")}
+                  </h4>
+                  {t("FOOTER.PARTNERS_LIST.UBTS.FULL_NAME")}
                 </div>
               </li>
               <li className="flex gap-3 align-middle">
@@ -122,8 +129,10 @@ export const Footer = () => {
                   </Link>
                 </div>
                 <div className="flex-1">
-                  <h4 className="uppercase text-lg mb-1">КбС</h4>
-                  Київська Богословська Семінарія
+                  <h4 className="uppercase text-lg mb-1">
+                    {t("FOOTER.PARTNERS_LIST.KTS.TITLE")}
+                  </h4>
+                  {t("FOOTER.PARTNERS_LIST.KTS.FULL_NAME")}
                 </div>
               </li>
             </ul>

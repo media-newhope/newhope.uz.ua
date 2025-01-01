@@ -2,26 +2,24 @@ import { Section } from "@/app/components/section/Section";
 import { Title } from "@/app/components/Title";
 import { PageSectionProps } from "@/app/sections/models";
 import { Button } from "@/app/components/button/Button";
+import { getTranslation } from "@/app/lib/utils";
 
 export function AboutSection(props: PageSectionProps) {
+  const t = getTranslation(props.lang);
   return (
     <Section {...props}>
-      <Section.Title subtitle="Наша місія">
-        Вірити <br />
-        любити <br />
-        служити
+      <Section.Title subtitle={t("ABOUT.SUBTITLE")}>
+        {t("ABOUT.MISSION_1")} <br />
+        {t("ABOUT.MISSION_2")} <br />
+        {t("ABOUT.MISSION_3")}
       </Section.Title>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div className="space-y-6 text-center md:text-left">
-          <Title>Про Нас</Title>
-          <p className="text-lg text-gray-700">
-            Ми віримо в силу віри, яка об&apos;єднує людей та надихає на добрі
-            справи. Наша церква - це місце, де кожен може знайти духовну
-            підтримку, зростати у вірі та служити ближньому.
-          </p>
+          <Title>{t("ABOUT.ABOUT_US")}</Title>
+          <p className="text-lg text-gray-700">{t("ABOUT.DESCRIPTION")}</p>
 
           <Button className="uppercase" size="large" color="primary">
-            Дізнатися більше
+            {t("ABOUT.LEARN_MORE")}
           </Button>
         </div>
 

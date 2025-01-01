@@ -27,11 +27,7 @@ export function HeroSection({ lang }: PageSectionProps) {
               <h1 className="text-4xl md:text-8xl  text-white mb-6 uppercase ">
                 {t("HERO.JOIN")}
               </h1>
-              <p className="text-xl text-white/90">
-                Приєднуйтеся до нашої недільного зібрання або налаштуйтеся на
-                наші прямі трансляції на YouTube, щоб спілкуватися з нами
-                звідусіль.
-              </p>
+              <p className="text-xl text-white/90">{t("HERO.SUBTITLE")}</p>
             </div>
           </div>
 
@@ -42,7 +38,7 @@ export function HeroSection({ lang }: PageSectionProps) {
               target="_blank"
             >
               <FaLocationDot size={40} />
-              м. Ужгород, вул. Мирослава Скорика 18
+              {t("HERO.ADDRESS")}
             </Link>
           </div>
         </div>

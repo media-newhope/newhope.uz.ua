@@ -24,7 +24,7 @@ export default function Home() {
       <TeamSection lang={LANGUAGE.EN} id="team" />
       <GospelSection lang={LANGUAGE.EN} id="gospel" />
       <FeedbackSection lang={LANGUAGE.EN} id="feedback" />
-      <Footer />
+      <Footer lang={LANGUAGE.EN} />
     </>
   );
 }

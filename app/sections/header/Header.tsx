@@ -31,9 +31,9 @@ export const Header = ({ lang }: PageSectionProps) => {
 
   const menuItems = [
     { name: t("NAV.ABOUT"), link: SITE_LINKS.ABOUT },
-    { name: "Наші служіння", link: SITE_LINKS.SERVICES },
-    { name: "Будівництво", link: SITE_LINKS.BUILDING },
-    { name: "Пожертвувати", link: SITE_LINKS.GIVING },
+    { name: t("NAV.SERVICE"), link: SITE_LINKS.SERVICES },
+    { name: t("NAV.BUILDING"), link: SITE_LINKS.BUILDING },
+    { name: t("NAV.GIVING"), link: SITE_LINKS.GIVING },
   ];
 
   const toggleMenu = () => {
@@ -50,7 +50,7 @@ export const Header = ({ lang }: PageSectionProps) => {
         <div className="flex items-center text-white">
           <Link href="/public" className="text-2xl flex items-center gap-4">
             <img width="43px" src="/logo.png" alt="" />
-            <span className="hidden md:inline-block">НОВА НАДІЯ</span>
+            <span className="hidden md:inline-block">{t("LOGO.TEXT")}</span>
           </Link>
           <Burger
             onToggle={toggleMenu}
@@ -75,7 +75,7 @@ export const Header = ({ lang }: PageSectionProps) => {
             }
           />
           <Button color="secondary" size="large">
-            ПРИЄДНУЙСЯ
+            {t("NAV.JOIN_US")}
           </Button>
         </div>
       </Container>

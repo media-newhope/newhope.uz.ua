@@ -11,8 +11,10 @@ import {
   usePrevNextButtons,
 } from "@/app/sections/services/EmblaCarouselArrowButton";
 import { EmblaOptionsType } from "embla-carousel";
+import { getTranslation } from "@/app/lib/utils";
+import { LANGUAGE } from "@/app/locales/models";
 
-export function ServicesCarousel() {
+export function ServicesCarousel({ lang }: { lang: LANGUAGE }) {
   const options: EmblaOptionsType = { dragFree: false, align: "start" };
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
@@ -25,30 +27,32 @@ export function ServicesCarousel() {
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
+  const t = getTranslation(lang);
+
   const slides = [
     <ServiceItem
       key={0}
-      title="Недільна школа для дітей"
-      description="Недільна школа для дітей пропонує захоплюючі уроки, які допомагають зрозуміти біблійні історії через ігри та творчість."
+      title={t("SERVICES.KIDS.TITLE")}
+      description={t("SERVICES.KIDS.DESC")}
       url="/images/kids.jpg"
     ></ServiceItem>,
     <ServiceItem
       key={1}
-      title="Домашні церкви"
-      description="Малі групи віруючих, які збираються по домівках для спільного вивчення Біблії, молитви та підтримки один одного у теплій, сімейній атмосфері."
+      title={t("SERVICES.HOME.TITLE")}
+      description={t("SERVICES.HOME.DESC")}
       url="/images/home-church.jpg"
     ></ServiceItem>,
     <ServiceItem
       key={2}
-      title="Teen Zone"
-      description="Спеціальна програма для підлітків, де вони можуть зростати у вірі, спілкуватися з однолітками та розвивати свої таланти у дружній атмосфері."
+      title={t("SERVICES.TEEN.TITLE")}
+      description={t("SERVICES.TEEN.DESC")}
       url="/images/teen.jpg"
     ></ServiceItem>,
     <ServiceItem
       key={3}
-      title="Служіння військовим"
       url="/images/military.jpg"
-      description="Духовна та практична підтримка військовослужбовців та їхніх сімей через молитву, спілкування та різні форми допомоги."
+      title={t("SERVICES.MILITARY.TITLE")}
+      description={t("SERVICES.MILITARY.DESC")}
     ></ServiceItem>,
     <ServiceItem
       key={4}
