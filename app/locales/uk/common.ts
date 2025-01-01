@@ -38,8 +38,8 @@ export const TRANSLATION: LangObj = {
   "SERVICES.MILITARY.DESC":
     "Духовна та практична підтримка військовослужбовців та їхніх сімей через молитву, спілкування та різні форми допомоги.",
 
-  "TEAM.TITLE": "Team",
-  "TEAM.SUBTITLE": "Ministry Team",
+  "TEAM.TITLE": "Команда",
+  "TEAM.SUBTITLE": "Команда служителів",
 
   "TEAM.ROLES.PASTOR": "Pastor",
   "TEAM.ROLES.DEACON": "Deacon",
