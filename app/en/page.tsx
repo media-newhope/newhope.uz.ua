@@ -12,19 +12,18 @@ import { Footer } from "@/app/sections/footer/Footer";
 import { LANGUAGE } from "@/app/locales/models";
 
 export default function Home() {
-  console.log(LANGUAGE.UK, "LANGUAGE.UK");
   return (
     <>
-      <Header lang={LANGUAGE.UK} />
-      <HeroSection lang={LANGUAGE.UK} />
-      <AboutSection lang={LANGUAGE.UK} id="about" />
-      <ServicesSection lang={LANGUAGE.UK} id="services" />
-      <JoinSection lang={LANGUAGE.UK} id="join" />
-      <GivingSection lang={LANGUAGE.UK} id="giving" />
-      <BuildingSection lang={LANGUAGE.UK} id="building" />
-      <TeamSection lang={LANGUAGE.UK} id="team" />
-      <GospelSection lang={LANGUAGE.UK} id="gospel" />
-      <FeedbackSection lang={LANGUAGE.UK} id="feedback" />
+      <Header lang={LANGUAGE.EN} />
+      <HeroSection lang={LANGUAGE.EN} />
+      <AboutSection lang={LANGUAGE.EN} id="about" />
+      <ServicesSection lang={LANGUAGE.EN} id="services" />
+      <JoinSection lang={LANGUAGE.EN} id="join" />
+      <GivingSection lang={LANGUAGE.EN} id="giving" />
+      <BuildingSection lang={LANGUAGE.EN} id="building" />
+      <TeamSection lang={LANGUAGE.EN} id="team" />
+      <GospelSection lang={LANGUAGE.EN} id="gospel" />
+      <FeedbackSection lang={LANGUAGE.EN} id="feedback" />
       <Footer />
     </>
   );

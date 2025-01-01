@@ -1,6 +1,9 @@
 import { HTMLAttributes } from "react";
+import { LANGUAGE } from "@/app/locales/models";
 
-export type PageSectionProps = HTMLAttributes<HTMLElement>;
+export interface PageSectionProps extends HTMLAttributes<HTMLElement> {
+  lang: LANGUAGE;
+}
 
 export enum SITE_LINKS {
   ABOUT = "#about",

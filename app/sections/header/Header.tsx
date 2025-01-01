@@ -6,11 +6,14 @@ import { Burger } from "../../components/burger/Burger";
 import { MobileNav } from "@/app/components/mobileNav/MobileNav";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { SITE_LINKS } from "@/app/sections/models";
+import { PageSectionProps, SITE_LINKS } from "@/app/sections/models";
+import { getTranslation } from "@/app/lib/utils";
 
-export const Header = () => {
+export const Header = ({ lang }: PageSectionProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const t = getTranslation(lang);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,12 +26,11 @@ export const Header = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup listener
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const menuItems = [
-    { name: "Про нас", link: SITE_LINKS.ABOUT },
+    { name: t("NAV.ABOUT"), link: SITE_LINKS.ABOUT },
     { name: "Наші служіння", link: SITE_LINKS.SERVICES },
     { name: "Будівництво", link: SITE_LINKS.BUILDING },
     { name: "Пожертвувати", link: SITE_LINKS.GIVING },

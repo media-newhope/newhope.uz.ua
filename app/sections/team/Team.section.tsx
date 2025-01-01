@@ -1,7 +1,7 @@
 import { Section } from "@/app/components/section/Section";
 import { FaFacebook, FaInstagram } from "react-icons/fa";
 import { TeamMember } from "@/app/sections/team/TeamMember";
-import {PageSectionProps} from "@/app/sections/models";
+import { PageSectionProps } from "@/app/sections/models";
 
 export function TeamSection(props: PageSectionProps) {
   const teamMembers = [

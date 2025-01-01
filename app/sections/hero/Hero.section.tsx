@@ -1,26 +1,17 @@
 import { FaLocationDot } from "react-icons/fa6";
 import Link from "next/link";
-import { SITE_LINKS } from "@/app/sections/models";
+import { PageSectionProps, SITE_LINKS } from "@/app/sections/models";
+import { getTranslation } from "@/app/lib/utils";
 
-interface HeroProps {
-  title: string;
-  description: string;
-  address: string;
-  imageUrl: string;
-}
+export function HeroSection({ lang }: PageSectionProps) {
+  const t = getTranslation(lang);
 
-export function HeroSection({
-  title,
-  description,
-  address,
-  imageUrl,
-}: HeroProps) {
   return (
     <div className="relative z-10 h-screen w-full">
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(${imageUrl})`,
+          backgroundImage: `url(/hero-background.jpg)`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
@@ -34,9 +25,13 @@ export function HeroSection({
           <div className="flex-1 flex items-center">
             <div className="max-w-4xl">
               <h1 className="text-4xl md:text-8xl  text-white mb-6 uppercase ">
-                {title}
+                {t("HERO.JOIN")}
               </h1>
-              <p className="text-xl text-white/90">{description}</p>
+              <p className="text-xl text-white/90">
+                Приєднуйтеся до нашої недільного зібрання або налаштуйтеся на
+                наші прямі трансляції на YouTube, щоб спілкуватися з нами
+                звідусіль.
+              </p>
             </div>
           </div>
 
@@ -47,7 +42,7 @@ export function HeroSection({
               target="_blank"
             >
               <FaLocationDot size={40} />
-              {address}
+              м. Ужгород, вул. Мирослава Скорика 18
             </Link>
           </div>
         </div>

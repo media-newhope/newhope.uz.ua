@@ -1,10 +1,8 @@
 import { Section } from "@/app/components/section/Section";
-import { HTMLAttributes } from "react";
 import { ServicesCarousel } from "@/app/sections/services/ServicesCarousel";
+import { PageSectionProps } from "@/app/sections/models";
 
-type ServicesSectionProps = HTMLAttributes<HTMLElement>;
-
-export function ServicesSection({ ...props }: ServicesSectionProps) {
+export function ServicesSection({ ...props }: PageSectionProps) {
   return (
     <Section {...props} className="bg-gray-100">
       <Section.Title subtitle="наші служіння">
