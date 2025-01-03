@@ -33,30 +33,40 @@ const initialValues: FormValues = {
   message: "",
 };
 
+const FORM_ID = "1FAIpQLSfoJl8L8zuMevPRlJJnL07BmC-IEMtpqtu3h39MIQsWbYehAA";
+const NAME_ID = "1511643703";
+const EMAIL_ID = "1593919696";
+const MESSAGE_ID = "162008232";
+
 export const FeedbackForm = ({ lang }: { lang: LANGUAGE }) => {
   const t = getTranslation(lang);
 
   const handleSubmit = async (
-    values: FormValues,
+    formData: FormValues,
     { setSubmitting, resetForm }: FormikHelpers<FormValues>,
   ) => {
+    const formUrl = `https://docs.google.com/forms/d/e/${FORM_ID}/formResponse`;
+
+    console.log();
+
+    const data = new URLSearchParams();
+    data.append(`entry.${NAME_ID}`, formData.name);
+    data.append(`entry.${EMAIL_ID}`, formData.email);
+    data.append(`entry.${MESSAGE_ID}`, formData.message);
+
     try {
-      await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        {
-          from_name: values.name,
-          from_email: values.email,
-          message: values.message,
+      await fetch(formUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY,
-      );
+        body: data,
+      });
 
       resetForm();
-      alert(t("FEEDBACK.SUCCESS"));
     } catch (error) {
-      console.error("Error sending email:", error);
-      alert(t("FEEDBACK.ERROR.REQUEST"));
+      console.error("Error submitting form:", error);
     } finally {
       setSubmitting(false);
     }
