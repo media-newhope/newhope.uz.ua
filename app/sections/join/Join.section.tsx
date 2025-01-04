@@ -62,7 +62,11 @@ export function JoinSection(props: PageSectionProps) {
   ];
 
   return (
-    <Section theme="dark" className="p-3 md:px-16 md:pb-28" {...props}>
+    <Section
+      theme="dark"
+      className="p-3 md:px-16 md:pb-28 bg-[url('/images/join-bg.jpg')] bg-cover bg-center"
+      {...props}
+    >
       <Section.Title subtitle={t("JOIN.TITLE")} className="mb-8 md:mb-24">
         {t("JOIN.SUBTITLE")}
       </Section.Title>

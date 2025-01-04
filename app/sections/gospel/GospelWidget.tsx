@@ -118,7 +118,7 @@ export function GospelWidget({ lang }: { lang: LANGUAGE }) {
         tileContent={
           !!selectedIndex ? gospelItems[selectedIndex].details : undefined
         }
-        className="mr-6"
+        className="mb-6 md:mr-6 md:mb-0"
       />
 
       <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">

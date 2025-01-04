@@ -23,7 +23,7 @@ export function AboutSection(props: PageSectionProps) {
           </Button>
         </div>
 
-        <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
+        <div className="relative h-[200px] bg-center bg-cover md:h-[400px] w-full rounded-lg overflow-hidden">
           <img
             src="/images/about.jpg"
             alt="Church Community"

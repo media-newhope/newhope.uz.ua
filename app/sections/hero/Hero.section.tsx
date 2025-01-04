@@ -11,7 +11,7 @@ export function HeroSection({ lang }: PageSectionProps) {
       <div
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(/hero-background.jpg)`,
+          backgroundImage: `url(/images/intro-bg.jpg)`,
           backgroundPosition: "center",
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
