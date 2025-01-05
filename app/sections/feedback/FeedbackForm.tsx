@@ -1,7 +1,6 @@
 "use client";
 import { Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
-import emailjs from "@emailjs/browser";
 import { FormField } from "@/app/components/form/FormField";
 import { Button } from "@/app/components/button/Button";
 import { getTranslation } from "@/app/lib/utils";
