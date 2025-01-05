@@ -37,6 +37,15 @@ export const TRANSLATION: LangObj = {
   "SERVICES.MILITARY.TITLE": "Military Ministry",
   "SERVICES.MILITARY.DESC":
     "Spiritual and practical support for service members and their families through prayer, fellowship, and various forms of assistance.",
+  "SERVICES.ADDICTED.TITLE": "Addiction Recovery",
+  "SERVICES.ADDICTED.DESC":
+    "Our program offers support and assistance to individuals struggling with alcohol and drug addiction. Together, we'll work towards recovery through support groups and rehabilitation programs.",
+  "SERVICES.POOR.TITLE": "Meals for the needy",
+  "SERVICES.POOR.DESC":
+    "Every Saturday, we invite everyone in need of a warm meal and companionship to our church. Our team of volunteers lovingly prepares delicious and nutritious meals to share with those who need them.",
+  "SERVICES.BIBLE_SCHOOL.TITLE": "School of Spiritual Growth",
+  "SERVICES.BIBLE_SCHOOL.DESC":
+    "This is a place where we dive into the depths of the Holy Scriptures. In our thematic meetings, experienced speakers help us better understand God's Word and apply it in our lives.",
 
   "TEAM.TITLE": "Team",
   "TEAM.SUBTITLE": "Ministry Team",

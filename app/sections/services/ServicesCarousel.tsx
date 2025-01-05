@@ -56,21 +56,21 @@ export function ServicesCarousel({ lang }: { lang: LANGUAGE }) {
     ></ServiceItem>,
     <ServiceItem
       key={4}
-      title="Недільна школа для дітей"
-      description="Недільна школа для дітей пропонує захоплюючі уроки, які допомагають зрозуміти біблійні історії через ігри та творчість."
-      url="/images/kids.jpg"
+      title={t("SERVICES.ADDICTED.TITLE")}
+      description={t("SERVICES.ADDICTED.DESC")}
+      url="/images/addicted.jpg"
+    ></ServiceItem>,
+    <ServiceItem
+      key={4}
+      title={t("SERVICES.POOR.TITLE")}
+      description={t("SERVICES.POOR.DESC")}
+      url="/images/poor.jpg"
     ></ServiceItem>,
     <ServiceItem
       key={5}
-      title="Домашні церкви"
-      description="Малі групи віруючих, які збираються по домівках для спільного вивчення Біблії, молитви та підтримки один одного у теплій, сімейній атмосфері."
-      url="/images/home-church.jpg"
-    ></ServiceItem>,
-    <ServiceItem
-      key={6}
-      title="Домашні церкви"
-      description="Малі групи віруючих, які збираються по домівках для спільного вивчення Біблії, молитви та підтримки один одного у теплій, сімейній атмосфері."
-      url="/images/home-church.jpg"
+      title={t("SERVICES.BIBLE_SCHOOL.TITLE")}
+      description={t("SERVICES.BIBLE_SCHOOL.DESC")}
+      url="/images/bible.jpg"
     ></ServiceItem>,
   ];
 
