@@ -107,7 +107,7 @@ const GospelTile = ({
 };
 
 export function GospelWidget({ lang }: { lang: LANGUAGE }) {
-  const [selectedIndex, setSelectedIndex] = useState<number>();
+  const [selectedIndex, setSelectedIndex] = useState<number>(-1);
 
   const gospelItems = getGospelItems(lang);
 
@@ -115,9 +115,7 @@ export function GospelWidget({ lang }: { lang: LANGUAGE }) {
     <div className="grid grid-cols-1 md:grid-cols-3  max-w-5xl mx-auto">
       <GospelMainTile
         lang={lang}
-        tileContent={
-          !!selectedIndex ? gospelItems[selectedIndex].details : undefined
-        }
+        tileContent={gospelItems[selectedIndex]?.details}
         className="mb-6 md:mr-6 md:mb-0"
       />
 
