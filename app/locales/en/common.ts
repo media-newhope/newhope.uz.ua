@@ -105,17 +105,30 @@ export const TRANSLATION: LangObj = {
   "GOSPEL.TITLE": "Four Important Things to Know",
   "GOSPEL.LOW1.TITLE": "God Loves Me",
   "GOSPEL.LOW1.DESC1":
-    "God has done everything to show how much He loves us. He offers us eternal and abundant life. We can have this life if we trust in Jesus.",
+    "God loves you! His love is limitless and unconditional. The greatest thing God desires for you is for you to experience His love and find your life's purpose in a relationship with Him.",
+  "GOSPEL.LOW1.REF1": "1 John 4:16",
+  "GOSPEL.LOW1.REF2": "Psalm 16:11",
   "GOSPEL.LOW1.DESC2":
-    "The Bible says that to all who believed in Him, He gave the right to have eternal life",
-  "GOSPEL.LOW1.DESC3":
-    "All we need to do is turn to God and ask for forgiveness for living our lives without Him",
+    "The Bible says that everyone who believes in Him has been given the right to have eternal life.",
   "GOSPEL.LOW2.TITLE": "I Have Sinned",
-  "GOSPEL.LOW2.DESC": "",
+  "GOSPEL.LOW2.DESC":
+    "Often, we don't feel God's love because we ignore Him. We all seek meaning and fulfillment in life, but not with God. We don't trust Him. We don't follow His will for us. When we live our lives our own way, the Bible calls it sin. Sin damages our relationships and negatively impacts our interactions with others. Sin separates us from the life God intended for us.",
+  "GOSPEL.LOW2.REF1": "Romans 3:23",
+  "GOSPEL.LOW2.REF2": "Isaiah 59:2",
   "GOSPEL.LOW3.TITLE": "Jesus Died for Me",
-  "GOSPEL.LOW3.DESC": "",
+  "GOSPEL.LOW3.DESC":
+    "Our sin does not prevent God from loving us. In fact, He came to earth in human form as Jesus Christ to die for us. On the cross, Jesus took the punishment for our sins. Jesus died, but He rose again. He reconciled us to God. Through faith, we can know God's love and receive eternal life.",
+  "GOSPEL.LOW3.REF1": "John 3:16",
+  "GOSPEL.LOW3.REF2": "1 Peter 3:18",
   "GOSPEL.LOW4.TITLE": "I Need to Follow Jesus",
-  "GOSPEL.LOW5.DESC": "",
+  "GOSPEL.LOW4.DESC":
+    "God has done everything possible to show us how much He loves us. He offers us eternal life in abundance through Jesus Christ. Every person faces a choice. We can ask God for forgiveness for living our lives our own way and make the decision to live for God, trusting in Christ. What will your choice be?",
+  "GOSPEL.LOW4.REF1": "John 1:12",
+  "GOSPEL.LOW4.REF2": "Revelation 3:20",
+
+  "GOSPEL.FIND_OUT": "Find out",
+  "GOSPEL.NEXT_SIGN": "Next Sign",
+  "GOSPEL.QUESTION": "I have a question",
 
   "FEEDBACK.TITLE": "Contact Us",
   "FEEDBACK.SUBTITLE": "Feedback",

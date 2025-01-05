@@ -11,6 +11,7 @@ export enum SITE_LINKS {
   BUILDING = "#building",
   GIVING = "#giving",
   JOIN = "#join",
+  FEEDBACK = "#feedback",
   GOOGLE_MAPS = "https://maps.app.goo.gl/hw979PjViKu7Ygd59",
   YOUTUBE = "https://www.youtube.com/@NewHopeUzh",
   FACEBOOK = "https://www.facebook.com/newhopeuzhgorod",

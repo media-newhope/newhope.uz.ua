@@ -5,24 +5,57 @@ import { GospelIcon, Icon } from "@/app/components/Icon";
 import { Button } from "@/app/components/button/Button";
 import { LANGUAGE } from "@/app/locales/models";
 import { getTranslation } from "@/app/lib/utils";
+import Link from "next/link";
+import { SITE_LINKS } from "@/app/sections/models";
 
 interface MainTileContent {
   desc: React.ReactNode;
   refs: string[];
   icon: GospelIcon;
+  title: string;
 }
 
 interface GospelMainTileProps extends HTMLAttributes<HTMLElement> {
   tileContent?: MainTileContent | undefined;
   lang: LANGUAGE;
+  isLastTile: boolean;
+  isFirstTile: boolean;
+  nextTile: () => void;
 }
 
 const GospelMainTile = ({
   className,
   tileContent,
   lang,
+  isLastTile = false,
+  isFirstTile = true,
+  nextTile,
 }: GospelMainTileProps) => {
   const t = getTranslation(lang);
+
+  function getButton() {
+    if (isFirstTile) {
+      return (
+        <Button className="uppercase w-full" onClick={nextTile}>
+          {t("GOSPEL.FIND_OUT")}
+        </Button>
+      );
+    } else if (isLastTile) {
+      return (
+        <Link href={SITE_LINKS.FEEDBACK}>
+          <Button className="uppercase w-full">{t("GOSPEL.QUESTION")}</Button>
+        </Link>
+      );
+    }
+    {
+      return (
+        <Button className="uppercase w-full" onClick={nextTile}>
+          {t("GOSPEL.NEXT_SIGN")}
+        </Button>
+      );
+    }
+  }
+
   return (
     <div
       className={`${className} 
@@ -37,12 +70,15 @@ const GospelMainTile = ({
         <Icon name={tileContent.icon} className="mb-4" size={40} />
       )}
       {!tileContent && (
-        <h3 className="text-center font-semibold text-5xl uppercase">
+        <h3 className="text-center font-semibold text-5xl uppercase mb-5">
           {t("GOSPEL.TITLE")}
         </h3>
       )}
       {tileContent && (
         <>
+          <h4 className="text-center font-semibold text-4xl uppercase mb-5">
+            {tileContent.title}
+          </h4>
           <div className="mb-8">{tileContent.desc}</div>
           <div className="mb-8">
             {tileContent.refs.map((ref) => (
@@ -51,9 +87,10 @@ const GospelMainTile = ({
               </span>
             ))}
           </div>
-          <Button className="uppercase w-full">У мене є питання</Button>
         </>
       )}
+
+      {getButton()}
     </div>
   );
 };
@@ -117,9 +154,12 @@ export function GospelWidget({ lang }: { lang: LANGUAGE }) {
         lang={lang}
         tileContent={gospelItems[selectedIndex]?.details}
         className="mb-6 md:mr-6 md:mb-0"
+        isLastTile={selectedIndex === 3}
+        isFirstTile={selectedIndex < 0}
+        nextTile={() => setSelectedIndex((currentIndex) => ++currentIndex)}
       />
 
-      <div className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="hidden md:grid md:col-span-2 grid-cols-1 md:grid-cols-2 gap-6">
         <GospelTile
           icon={gospelItems[0].icon}
           title={gospelItems[0].title}

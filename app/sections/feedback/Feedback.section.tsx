@@ -10,7 +10,12 @@ export function FeedbackSection(props: PageSectionProps) {
   const t = getTranslation(props.lang);
 
   return (
-    <Section theme="custom" className="bg-secondary-200" {...props}>
+    <Section
+      id="feedback"
+      theme="custom"
+      className="bg-secondary-200"
+      {...props}
+    >
       <Section.Title subtitle={t("FEEDBACK.SUBTITLE")}>
         {t("FEEDBACK.TITLE")}
       </Section.Title>
