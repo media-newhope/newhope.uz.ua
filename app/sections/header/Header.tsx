@@ -77,9 +77,11 @@ export const Header = ({ lang }: PageSectionProps) => {
 
         <div className="flex items-center space-x-4">
           <LanguageSwitch currentLanguage={lang} />
-          <Button color="secondary" size="large">
-            {t("NAV.JOIN_US")}
-          </Button>
+          <Link href={SITE_LINKS.JOIN}>
+            <Button color="secondary" size="large">
+              {t("NAV.JOIN_US")}
+            </Button>
+          </Link>
         </div>
       </Container>
       <MobileNav
