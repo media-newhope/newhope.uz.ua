@@ -4,6 +4,7 @@ import { PageSectionProps } from "@/app/sections/models";
 import { Button } from "@/app/components/button/Button";
 import { getTranslation } from "@/app/lib/utils";
 import Link from "next/link";
+import { getPageUrl } from "@/app/utils";
 
 export function AboutSection(props: PageSectionProps) {
   const t = getTranslation(props.lang);
@@ -19,7 +20,7 @@ export function AboutSection(props: PageSectionProps) {
           <Title>{t("ABOUT.ABOUT_US")}</Title>
           <p className="text-lg text-gray-700">{t("ABOUT.DESCRIPTION")}</p>
 
-          <Link href="about">
+          <Link href={getPageUrl(props.lang, "about")}>
             <Button className="uppercase" size="large" color="primary">
               {t("ABOUT.LEARN_MORE")}
             </Button>

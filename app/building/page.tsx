@@ -5,7 +5,7 @@ import { StaticPageLayout } from "@/app/components/static-page-layout";
 export default function AboutPage() {
   return (
     <StaticLayout lang={LANGUAGE.UK}>
-      <StaticPageLayout imageUrl="/images/all-church.jpg" title="Про нас">
+      <StaticPageLayout imageUrl="/images/constraint.jpg" title="Будівництво">
         <p className="mb-5">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

@@ -6,8 +6,13 @@ import { Burger } from "../../components/burger/Burger";
 import { MobileNav } from "@/app/components/mobileNav/MobileNav";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { PageSectionProps, SITE_LINKS } from "@/app/sections/models";
+import {
+  LANG_URL_MAP,
+  PageSectionProps,
+  SITE_LINKS,
+} from "@/app/sections/models";
 import { getTranslation } from "@/app/lib/utils";
+import { getPageUrl } from "@/app/utils";
 
 export const Header = ({ lang }: PageSectionProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,10 +35,10 @@ export const Header = ({ lang }: PageSectionProps) => {
   }, []);
 
   const menuItems = [
-    { name: t("NAV.ABOUT"), link: SITE_LINKS.ABOUT },
-    { name: t("NAV.SERVICE"), link: SITE_LINKS.SERVICES },
-    { name: t("NAV.BUILDING"), link: SITE_LINKS.BUILDING },
-    { name: t("NAV.GIVING"), link: SITE_LINKS.GIVING },
+    { name: t("NAV.ABOUT"), link: getPageUrl(lang, SITE_LINKS.ABOUT) },
+    { name: t("NAV.SERVICE"), link: getPageUrl(lang, SITE_LINKS.SERVICES) },
+    { name: t("NAV.BUILDING"), link: getPageUrl(lang, SITE_LINKS.BUILDING) },
+    { name: t("NAV.GIVING"), link: getPageUrl(lang, SITE_LINKS.GIVING) },
   ];
 
   const toggleMenu = () => {
@@ -48,7 +53,10 @@ export const Header = ({ lang }: PageSectionProps) => {
     >
       <Container className="flex items-center justify-between">
         <div className="flex items-center text-white">
-          <Link href="/public" className="text-2xl flex items-center gap-4">
+          <Link
+            href={LANG_URL_MAP[lang]}
+            className="text-2xl flex items-center gap-4"
+          >
             <img width="43px" src="/logo.png" alt="" />
             <span className="hidden md:inline-block">{t("LOGO.TEXT")}</span>
           </Link>

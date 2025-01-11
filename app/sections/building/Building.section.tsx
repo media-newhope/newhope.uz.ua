@@ -2,6 +2,8 @@ import { Section } from "@/app/components/section/Section";
 import { PageSectionProps } from "@/app/sections/models";
 import { Button } from "@/app/components/button/Button";
 import { getTranslation } from "@/app/lib/utils";
+import Link from "next/link";
+import { getPageUrl } from "@/app/utils";
 
 export function BuildingSection(props: PageSectionProps) {
   const t = getTranslation(props.lang);
@@ -36,7 +38,9 @@ export function BuildingSection(props: PageSectionProps) {
 
           {/* CTA Button */}
           <div className="flex justify-center">
-            <Button>{t("BUILDING.LEARN_MORE")}</Button>
+            <Link href={getPageUrl(props.lang, "building")}>
+              <Button>{t("BUILDING.LEARN_MORE")}</Button>
+            </Link>
           </div>
         </div>
       </div>
