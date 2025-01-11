@@ -8,7 +8,7 @@ import { BuildingSection } from "@/app/sections/building/Building.section";
 import { GospelSection } from "@/app/sections/gospel/gospel.section";
 import { FeedbackSection } from "@/app/sections/feedback/Feedback.section";
 import { LANGUAGE } from "@/app/locales/models";
-import { StaticLayout } from "@/app/static-layout";
+import { StaticLayout } from "@/app/components/static-layout";
 
 export default function Home() {
   return (
