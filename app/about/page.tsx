@@ -2,7 +2,6 @@ import { StaticLayout } from "@/app/components/static-layout";
 import { LANGUAGE } from "@/app/locales/models";
 import { StaticPageLayout } from "@/app/components/static-page-layout";
 import { Title } from "../components/Title";
-import { Quote } from "@/app/components/Quote";
 import { InfoPanel } from "@/app/components/InfoPanel";
 import { FaChurch } from "react-icons/fa";
 import { PiUsersThreeFill } from "react-icons/pi";
@@ -147,10 +146,10 @@ export default function AboutPage() {
         </InfoPanel>
 
         
-        <Quote>
+        {/* <Quote>
         <Title>Історія</Title>
           Служіння по заснуванню церкви «Нова надія» розпочалось в 2007 році з переїздом в місто Ужгород 5 місіонерів з різних куточків України. Метою було проповідувати древнє Євангеліє актуальною мовою для сучасників
-        </Quote>
+        </Quote> */}
 
       </StaticPageLayout>
     </StaticLayout>
