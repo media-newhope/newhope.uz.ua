@@ -16,9 +16,9 @@ export function AboutSection(props: PageSectionProps) {
         {t("ABOUT.MISSION_3")}
       </Section.Title>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div className="space-y-6 text-center md:text-left">
+        <div className="text-center md:text-left">
           <Title>{t("ABOUT.ABOUT_US")}</Title>
-          <p className="text-lg text-gray-700">{t("ABOUT.DESCRIPTION")}</p>
+          <p className="text-lg text-gray-700 mb-8">{t("ABOUT.DESCRIPTION")}</p>
 
           <Link href={getPageUrl(props.lang, "about")}>
             <Button className="uppercase" size="large" color="primary">
