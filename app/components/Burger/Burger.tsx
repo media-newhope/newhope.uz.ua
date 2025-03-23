@@ -7,7 +7,7 @@ interface BurgerProps extends React.ButtonHTMLAttributes<HTMLButtonElement>{
   isOpen: boolean;
 }
 
-export const Burger: React.FC<BurgerProps> = ({ onToggle, isOpen, ...props }) => {
+const Burger: React.FC<BurgerProps> = ({ onToggle, isOpen, ...props }) => {
   return (
     <button
       onClick={onToggle}

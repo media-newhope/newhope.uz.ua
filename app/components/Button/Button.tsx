@@ -7,7 +7,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: "small" | "medium" | "large";
 }
 
-export const Button = ({
+const Button = ({
   color = "primary",
   size = "large",
   variant = "solid",
@@ -42,3 +42,5 @@ export const Button = ({
     </button>
   );
 };
+
+export default Button;
