@@ -13,8 +13,8 @@ import {
 } from "@/app/sections/models";
 import { getTranslation } from "@/app/lib/utils";
 import { getPageUrl } from "@/app/utils";
-import { Burger } from '../../components/burger/Burger';
-import { Button } from '../../components/button/Button';
+import { Burger } from '@/app/components/burger/Burger';
+import { Button } from '@/app/components/button/Button';
 
 export const Header = ({ lang }: PageSectionProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

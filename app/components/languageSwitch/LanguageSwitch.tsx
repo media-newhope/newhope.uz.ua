@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "../button/Button";
+import { Button } from '@/app/components/button/Button';
 import { usePathname, useRouter } from "next/navigation";
 
 interface LanguageSwitchProps {
