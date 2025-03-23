@@ -1,8 +1,8 @@
 "use client";
-import { Button } from "../../components/button/Button";
+
 import { LanguageSwitch } from "@/app/components/languageSwitch/LanguageSwitch";
 import { Container } from "@/app/components/Container";
-import { Burger } from "../../components/burger/Burger";
+
 import { MobileNav } from "@/app/components/mobileNav/MobileNav";
 import Link from "next/link";
 import { useEffect, useState, useMemo } from "react";
@@ -13,6 +13,8 @@ import {
 } from "@/app/sections/models";
 import { getTranslation } from "@/app/lib/utils";
 import { getPageUrl } from "@/app/utils";
+import { Burger } from '../../components/burger/Burger';
+import { Button } from '../../components/button/Button';
 
 export const Header = ({ lang }: PageSectionProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
