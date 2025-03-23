@@ -17,22 +17,9 @@ import { getPageUrl } from "@/app/utils";
 export const Header = ({ lang }: PageSectionProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
 
   const t = getTranslation(lang);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const menuItems = [
     { name: t("NAV.ABOUT"), link: getPageUrl(lang, SITE_LINKS.ABOUT) },
@@ -41,13 +28,66 @@ export const Header = ({ lang }: PageSectionProps) => {
     { name: t("NAV.GIVING"), link: getPageUrl(lang, SITE_LINKS.GIVING) },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+
+      // Extract section names, handling both URL formats
+      const sections = menuItems.map(item => {
+        const match = item.link.match(/#([^/]+)$/);
+        return match ? match[1] : '';
+      });
+      
+      let currentSection = '';
+      let minDistance = Infinity;
+
+      // Find the section closest to the viewport center
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const viewportCenter = window.innerHeight / 2;
+          const elementCenter = rect.top + rect.height / 2;
+          const distance = Math.abs(viewportCenter - elementCenter);
+
+          if (distance < minDistance) {
+            minDistance = distance;
+            currentSection = section;
+          }
+        }
+      }
+
+      if (currentSection !== activeSection) {
+        setActiveSection(currentSection);
+      }
+    };
+
+    const throttledHandleScroll = () => {
+      if (!throttledHandleScroll.timeout) {
+        throttledHandleScroll.timeout = setTimeout(() => {
+          handleScroll();
+          throttledHandleScroll.timeout = null;
+        }, 100) as unknown as null;
+      }
+    };
+    throttledHandleScroll.timeout = null as unknown as NodeJS.Timeout | null;
+
+    handleScroll(); // Initial check
+    window.addEventListener("scroll", throttledHandleScroll);
+    return () => window.removeEventListener("scroll", throttledHandleScroll);
+  }, [menuItems, activeSection]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <header
-      className={`py-3  [&_a]:text-white [&_a:hover]:text-gray-300 z-20 left-0 right-0 fixed transition-colors duration-500 ${
+      className={`py-3  z-20 left-0 right-0 fixed transition-colors duration-500 ${
         isScrolled ? "bg-black/60 backdrop-blur-sm" : "bg-black"
       }`}
     >
@@ -69,7 +109,15 @@ export const Header = ({ lang }: PageSectionProps) => {
 
         <nav className="hidden lg:flex items-center text-base space-x-6 uppercase">
           {menuItems.map((item) => (
-            <Link key={item.link} href={item.link}>
+            <Link 
+              key={item.link} 
+              href={item.link}
+              className={`${
+                activeSection === item.link.match(/#([^/]+)$/)?.[1]
+                  ? 'text-secondary-500' 
+                  : 'text-white'
+              } transition-colors duration-300 hover:text-secondary-500`}
+            >
               {item.name}
             </Link>
           ))}
