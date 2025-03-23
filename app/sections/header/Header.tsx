@@ -5,7 +5,7 @@ import { Container } from "@/app/components/Container";
 import { Burger } from "../../components/burger/Burger";
 import { MobileNav } from "@/app/components/mobileNav/MobileNav";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import {
   LANG_URL_MAP,
   PageSectionProps,
@@ -21,12 +21,12 @@ export const Header = ({ lang }: PageSectionProps) => {
 
   const t = getTranslation(lang);
 
-  const menuItems = [
+  const menuItems = useMemo(() => [
     { name: t("NAV.ABOUT"), link: getPageUrl(lang, SITE_LINKS.ABOUT) },
     { name: t("NAV.SERVICE"), link: getPageUrl(lang, SITE_LINKS.SERVICES) },
     { name: t("NAV.BUILDING"), link: getPageUrl(lang, SITE_LINKS.BUILDING) },
     { name: t("NAV.GIVING"), link: getPageUrl(lang, SITE_LINKS.GIVING) },
-  ];
+  ], [t, lang]);
 
   useEffect(() => {
     const handleScroll = () => {
