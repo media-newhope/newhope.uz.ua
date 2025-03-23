@@ -2,7 +2,7 @@
 import { Formik, FormikHelpers } from "formik";
 import * as Yup from "yup";
 import { FormField } from "@/app/components/form/FormField";
-import { Button } from "@/app/components/button/Button";
+import Button from "@/app/components/button/Button";
 import { getTranslation } from "@/app/lib/utils";
 import { LangProps, LANGUAGE } from "@/app/locales/models";
 

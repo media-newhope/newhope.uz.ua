@@ -2,7 +2,7 @@
 import { HTMLAttributes, useState } from "react";
 import { getGospelItems } from "@/app/sections/gospel/gospel-content";
 import { GospelIcon, Icon } from "@/app/components/Icon";
-import { Button } from "@/app/components/button/Button";
+import Button from "@/app/components/button/Button";
 import { LANGUAGE } from "@/app/locales/models";
 import { getTranslation } from "@/app/lib/utils";
 import Link from "next/link";

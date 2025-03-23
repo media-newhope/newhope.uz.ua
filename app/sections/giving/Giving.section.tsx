@@ -1,8 +1,8 @@
 import { Section } from "@/app/components/section/Section";
 import { PageSectionProps, SITE_LINKS } from "@/app/sections/models";
-import { Button } from "@/app/components/button/Button";
 import Link from "next/link";
 import { getTranslation } from "@/app/lib/utils";
+import Button from "@/app/components/button/Button";
 
 export function GivingSection(props: PageSectionProps) {
   const t = getTranslation(props.lang);

@@ -1,5 +1,3 @@
-"use client";
-
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   color?: "primary" | "secondary" | "transparent" | "black";
   variant?: "solid";
