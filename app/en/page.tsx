@@ -17,8 +17,8 @@ export default function Home() {
       <AboutSection lang={LANGUAGE.EN} id="about" />
       <ServicesSection lang={LANGUAGE.EN} id="services" />
       <JoinSection lang={LANGUAGE.EN} id="join" />
-      <GivingSection lang={LANGUAGE.EN} id="giving" />
       <BuildingSection lang={LANGUAGE.EN} id="building" />
+      <GivingSection lang={LANGUAGE.EN} id="giving" />
       <TeamSection lang={LANGUAGE.EN} id="team" />
       <GospelSection lang={LANGUAGE.EN} id="gospel" />
       <FeedbackSection lang={LANGUAGE.EN} id="feedback" />
