@@ -23,8 +23,8 @@ export function HeroSection({ lang }: PageSectionProps) {
       <div className="relative z-10 h-full">
         <div className="container mx-auto px-4 h-full flex flex-col justify-center pb-10">
           <div className="flex-1 flex items-center">
-            <div className="max-w-4xl">
-              <h1 className="text-4xl md:text-8xl  text-white mb-6 uppercase ">
+            <div className="max-w-[800px]">
+              <h1 className="text-4xl md:text-8xl text-white mb-6 uppercase" style={{ lineHeight: "1.1" }}>
                 {t("HERO.JOIN")}
               </h1>
               <p className="text-xl text-white/90">{t("HERO.SUBTITLE")}</p>

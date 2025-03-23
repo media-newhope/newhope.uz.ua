@@ -11,7 +11,7 @@ export const TRANSLATION: LangObj = {
   "HERO.JOIN": "Join our community",
   "HERO.SUBTITLE":
     "Join our Sunday gathering or tune in to our YouTube live streams to connect with us from anywhere",
-  "HERO.ADDRESS": "18 Myroslava Skoryka St., Uzhhorod",
+  "HERO.ADDRESS": "6 Myroslava Skoryka St., Uzhhorod",
 
   "ABOUT.TITLE": "About Us",
   "ABOUT.SUBTITLE": "Our Mission",
