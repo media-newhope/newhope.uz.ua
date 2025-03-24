@@ -5,6 +5,7 @@ import { getTranslation } from "@/app/lib/utils";
 import Link from "next/link";
 import { getPageUrl } from "@/app/utils";
 import Button from "@/app/components/button/Button";
+import Image from 'next/image';
 
 export function AboutSection(props: PageSectionProps) {
   const t = getTranslation(props.lang);
@@ -28,10 +29,11 @@ export function AboutSection(props: PageSectionProps) {
         </div>
 
         <div className="relative h-[200px] bg-center bg-cover md:h-[400px] w-full rounded-lg overflow-hidden">
-          <img
+          <Image
             src="/images/about.jpg"
             alt="Church Community"
             className="object-cover"
+            fill
           />
         </div>
       </div>
