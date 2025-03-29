@@ -1,4 +1,5 @@
 import { PageTitle } from "@/app/components/sectionTitle/PageTitle";
+import Image from 'next/image';
 
 interface StaticPageLayoutProps {
   imageUrl: string;
@@ -22,10 +23,11 @@ export function StaticPageLayout({
       <div
         className={`container mx-auto max-w-7xl h-[500px] overflow-hidden relative ${imageUrl} mb-10`}
       >
-        <img
-          className="w-full h-full object-cover absolute top-1/2 -translate-y-1/2"
+        <Image
+          className="w-full h-full object-cover absolute"
           src={imageUrl}
           alt=""
+          fill
         />
       </div>
       <div className={containerClass}>{children}</div>
