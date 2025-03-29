@@ -32,9 +32,10 @@ export function BuildingSection(props: PageSectionProps) {
           </h2>
 
           {/* Description */}
-          <p className="text-gray-600 text-center mb-8 text-md leading-relaxed max-w-sm m-auto">
-            {t("BUILDING.DESC")}
-          </p>
+          <p
+            className="text-gray-600 text-center mb-8 text-md leading-relaxed max-w-sm m-auto"
+            dangerouslySetInnerHTML={{ __html: t("BUILDING.DESC") }}
+          />
 
           {/* CTA Button */}
           <div className="flex justify-center">

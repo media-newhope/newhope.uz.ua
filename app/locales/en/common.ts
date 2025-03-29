@@ -98,7 +98,8 @@ export const TRANSLATION: LangObj = {
   "GIVING.BUILDING": "BUILDING",
 
   "BUILDING.TITLE": "Church Building Construction",
-  "BUILDING.DESC": "Our goal is to build a facility to better serve our city",
+  "BUILDING.DESC":
+    "For over 15 years, we have served the community by renting premises. It's time to create our own home for prayer, education, and helping our neighbors. <a href='/en/#giving'>Join us</a> — your support is important.",
   "BUILDING.LEARN_MORE": "Learn More",
 
   "GOSPEL.SUBTITLE": "Faith",
