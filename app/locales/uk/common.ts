@@ -169,7 +169,7 @@ export const TRANSLATION: LangObj = {
   "FOOTER.PARTNERS_LIST.UBTS.FULL_NAME":
     "Українська Баптистська Теологічна Семінарія",
 
-  "FOOTER.PARTNERS_LIST.ECB.TITLE": "ECB",
+  "FOOTER.PARTNERS_LIST.ECB.TITLE": "ECB",  
   "FOOTER.PARTNERS_LIST.ECB.FULL_NAME":
     "All-Ukrainian Union of Evangelical Christian Baptist Churches",
 

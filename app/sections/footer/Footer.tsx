@@ -21,7 +21,7 @@ export const Footer = ({ lang }: PageSectionProps) => {
         <div className="flex flex-col md:flex-row justify-between gap-8">
           <div>
             <Link
-              href="/public"
+              href="/"
               className="text-2xl flex items-center gap-4 mb-5 md:mb-16"
             >
               <img width="43px" src="/logo.png" alt="" />
