@@ -24,7 +24,7 @@ export const TRANSLATION: LangObj = {
   "ABOUT.LEARN_MORE": "Дізнатися більше",
 
   "SERVICES.TITLE": "наші служіння",
-  "SERVICES.SUBTITLE": "кожен знайде щось для себе",
+  "SERVICES.SUBTITLE": "Наша місія в дії",
   "SERVICES.KIDS.TITLE": "Недільна школа для дітей",
   "SERVICES.KIDS.DESC":
     "Недільна школа для дітей пропонує захоплюючі уроки, які допомагають зрозуміти біблійні історії через ігри та творчість.",

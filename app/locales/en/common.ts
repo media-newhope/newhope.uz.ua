@@ -24,7 +24,7 @@ export const TRANSLATION: LangObj = {
   "ABOUT.LEARN_MORE": "Learn More",
 
   "SERVICES.TITLE": "Our Ministries",
-  "SERVICES.SUBTITLE": "Something for Everyone",
+  "SERVICES.SUBTITLE": "Our Mission in Action",
   "SERVICES.KIDS.TITLE": "Children's Sunday School",
   "SERVICES.KIDS.DESC":
     "Our Sunday school offers engaging lessons that help children understand biblical stories through games and creativity.",
