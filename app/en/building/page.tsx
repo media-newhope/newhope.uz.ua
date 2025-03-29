@@ -12,7 +12,7 @@ export default function AboutPage() {
     <StaticLayout lang={LANGUAGE.EN}>
       <StaticPageLayout imageUrl="/images/constraint.jpg" title="Building">
         <p className="mb-5">
-          <strong>The church is not a building. The church is People gathered together, called by Christ.</strong> This is our conviction. For over 15 years, our gatherings have been held in rented facilities. However, we believe that a comfortable and well-designed building FOR the church will help organize better worship to God and provide higher quality ministry to our region. That's why we are gradually moving towards this dream - to have our own building for church gatherings and ministry.
+          <strong>The church is not a building. The church is People gathered together, called by Christ.</strong> This is our conviction. For over 15 years, our gatherings have been held in rented facilities. However, we believe that a comfortable and well-designed building FOR the church will help organize better worship to God and provide higher quality ministry to our region. That&apos;s why we are gradually moving towards this dream - to have our own building for church gatherings and ministry.
         </p>
         <p className="mb-5">
           In these dreams (and plans) we aim to build a facility that will become a roof for <strong>both weekly church gatherings and many social projects</strong>. Such as camps for children and teenagers, veteran support centers, assistance centers for people with addictions and health issues, care for people in need, and more. If God allows, we would also like this future facility to become <strong>a base for establishing Christian educational institutions</strong>. It could also support existing initiatives.
