@@ -152,7 +152,7 @@ export const TRANSLATION: LangObj = {
     "Thank you for your message. We will get back to you soon!",
 
   "FOOTER.LINKS": "Посилання",
-  "FOOTER.FIND_US": "Find Us",
+  "FOOTER.FIND_US": "Знайди нас",
   "FOOTER.PARTNERS": "Our Partners",
 
   "FOOTER.CONTACT.MAIL": "info@newhope.uz.ua",
