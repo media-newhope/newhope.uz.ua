@@ -11,7 +11,7 @@ export const TRANSLATION: LangObj = {
   "HERO.JOIN": "Приєднуйся до нашої спільноти",
   "HERO.SUBTITLE":
     "Приєднуйтеся до недільного зібрання або налаштуйтеся на наші прямі трансляції в YouTube, щоб спілкуватися з нами звідусіль",
-  "HERO.ADDRESS": "м. Ужгород, вул. Мирослава Скорика 6",
+  "HERO.ADDRESS": "м. Ужгород, вул. Мирослава Скорика (Сурікова) 8",
 
   "ABOUT.TITLE": "Про Нас",
   "ABOUT.SUBTITLE": "Наша місія",
@@ -71,7 +71,7 @@ export const TRANSLATION: LangObj = {
 
   "JOIN.VISIT.TITLE": "Відвідайте нас вживу",
   "JOIN.VISIT.DESCRIPTION1": "Завжди раді вас бачити на наших зібраннях.",
-  "JOIN.VISIT.DESCRIPTION2": "Щонеділі об 11:00. вул. Мирослава Скорика 18",
+  "JOIN.VISIT.DESCRIPTION2": "Щонеділі об 11:00. вул. Мирослава Скорика (Сурікова) 8",
 
   "JOIN.LIVESTREAM.TITLE": "Пряма трансляція",
   "JOIN.LIVESTREAM.DESCRIPTION":
@@ -131,7 +131,7 @@ export const TRANSLATION: LangObj = {
   "FEEDBACK.TITLE": "напиши нам",
   "FEEDBACK.SUBTITLE": "зворотній звʼязок",
   "FEEDBACK.KEY1": "Адреса",
-  "FEEDBACK.VALUE1": "вул. Мирослава скорика (сурікова) 8",
+  "FEEDBACK.VALUE1": "вул. Мирослава Скорика (Сурікова) 8",
   "FEEDBACK.KEY2": "Email",
   "FEEDBACK.VALUE2": "",
   "FEEDBACK.KEY3": "Знайди нас",
@@ -156,7 +156,7 @@ export const TRANSLATION: LangObj = {
   "FOOTER.PARTNERS": "Our Partners",
 
   "FOOTER.CONTACT.MAIL": "info@newhope.uz.ua",
-  "FOOTER.CONTACT.ADDRESS": "Myroslava Skoryka St. 8",
+  "FOOTER.CONTACT.ADDRESS": "Мирослава Скорика (Сурікова) 8",
 
   "FOOTER.MENU.ABOUT": "про нас",
   "FOOTER.MENU.SERVICES": "наші служіння",

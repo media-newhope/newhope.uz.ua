@@ -29,7 +29,15 @@ export const Footer = ({ lang }: PageSectionProps) => {
             </Link>
             <div className="uppercase">
               <p className="mb-2">info@newhope.uz.ua</p>
-              <p>{t("FOOTER.CONTACT.ADDRESS")}</p>
+              <p>
+                <Link
+                  className="flex items-center gap-2"
+                  href={SITE_LINKS.GOOGLE_MAPS}
+                  target="_blank"
+                >
+                  {t("FOOTER.CONTACT.ADDRESS")}
+                </Link>
+              </p>
             </div>
           </div>
 
