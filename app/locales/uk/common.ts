@@ -98,7 +98,7 @@ export const TRANSLATION: LangObj = {
   "BUILDING.DESC":
     "Вже понад 15 років ми служимо громаді, орендуючи приміщення. Настав час створити власний дім для молитви, освіти та допомоги ближнім. <a href='/#giving'>Долучайтеся</a> — ваша підтримка важлива.",
   "BUILDING.LEARN_MORE": "Дізнатись більше",
-
+  "BUILDING.DONATE_NOW": "Пожертвувати",
   "GOSPEL.SUBTITLE": "віра",
   "GOSPEL.TITLE": "Чотири Речі які важливо знати",
   "GOSPEL.LOW1.TITLE": "Бог любить мене",

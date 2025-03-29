@@ -1,27 +1,35 @@
 import { StaticLayout } from "@/app/components/static-layout";
 import { LANGUAGE } from "@/app/locales/models";
 import { StaticPageLayout } from "@/app/components/static-page-layout";
+import Link from "next/link";
+import Button from "../components/button/Button";
+import { getTranslation } from "../lib/utils";
 
 export default function AboutPage() {
+  const t = getTranslation(LANGUAGE.UK);
   return (
     <StaticLayout lang={LANGUAGE.UK}>
       <StaticPageLayout imageUrl="/images/constraint.jpg" title="Будівництво">
         <p className="mb-5">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation. Ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Non tellus orci ac auctor augue mauris augue neque gravida.
+          Церква — це не будівля. Церква — це зібрані разом Люди, покликані Христом. Таким є наше переконання. Та наші зібрання вже понад 15 років проходять у приміщеннях, які ми орендуємо. Проте переконані, що зручне і добре спроєктоване приміщення ДЛЯ церкви допоможе організувати краще поклоніння Богу і якісніше служіння нашому краю. Саме тому ми поступово і поволі крокуємо назустріч цій мрії — мати власне приміщення для зібрань і служіння церкви.
         </p>
-        <p>
-          Aenean vel elit scelerisque mauris. Imperdiet sed euismod nisi porta
-          lorem mollis aliquam. Quis vel eros donec ac odio tempor orci dapibus
-          ultrices. Elementum eu facilisis sed odio morbi. Nam at lectus urna
-          duis convallis convallis tellus id. Feugiat pretium nibh ipsum
-          consequat nisl vel. Elementum pulvinar etiam non quam lacus. Sit amet
-          porttitor eget.
+        <p className="mb-5">
+          В цих наших мріях (а саме планах) побудувати будівлю, яка стане дахом, як для церковних щотижневих зібрань, так і для багатьох соціальних проєктів. Таких як табори для дітей і підлітків, центри підтримки ветеранів, центри допомоги людям з залежностями та вадами здоров'я, піклування про людей в потребі тощо. Якщо Бог дозволить, то також ми хотіли б, щоб це майбутнє приміщення могло стати базою для утворення християнських освітніх закладів. Воно також могло б підтримати вже існуючі ініціативи.
         </p>
+        <p className="mb-5">
+          Наша громада вже понад 10 років поволі збирає кошти своїми силами на церковне приміщення. Ми доклали всіх зусиль, але поки змогли тільки придбати земельну ділянку, та попереду ще багато роботи. 
+        </p>
+        <p className="mb-5">
+          Моліться про можливості залучити більше ресурсів для початку проєктування і будівництва. 
+        </p>
+        <p className="mb-5">
+          Якщо наша мрія торкається вашого серця — відгукніться і станьте її співучасником через матеріальну пожертву саме на цей проєкт, натиснувши кнопку нижче. Ваша підтримка може допомогти зробити цю мрію реальністю.
+        </p>
+        <div className="flex justify-center">
+          <Link href="/#giving">
+            <Button>{t("BUILDING.DONATE_NOW")}</Button>
+          </Link>
+        </div>
       </StaticPageLayout>
     </StaticLayout>
   );
